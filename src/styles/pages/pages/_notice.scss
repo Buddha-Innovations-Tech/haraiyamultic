@@ -1,0 +1,36 @@
+.notices{
+    padding-top: 38px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (min-width:375px) and (max-width:768px) {
+        margin-bottom: 20px;
+    }
+    .notice-head{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: #554A4B;
+    }
+}
+
+.notice-list{
+    margin-bottom: 61px;
+}
+
+.notice-pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 85px;
+    .notice-current_page{
+        background-color: #026baf;
+        color: white;
+    }
+}
+ 
+
+ 
+
+ 
+
+ 

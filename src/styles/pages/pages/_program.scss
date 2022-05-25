@@ -1,0 +1,234 @@
+ .content-list{
+    margin-top: 35px;
+  }
+  .nav-tabs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      justify-content: flex-start;
+      gap: 10px;
+      // flex-wrap: wrap;
+    }
+  }
+
+  .bbs-navlist{
+    color:#666666 !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .BBS-content{
+    margin-top:45px;
+  }
+  .BBS-intro{
+    color:#026baf;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+   .BBS-description{
+    margin-top: 35px;
+   }
+  
+   .BBS-curicular-content{
+    padding-bottom: 40px;
+   }
+  
+   .bbs-content{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+   }
+   .bbs-title{
+    margin-top:40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color:#554A4B;
+   }
+  
+   .BBS-special{
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+    margin-bottom: 85px;
+   }
+  .bbs-special-list{
+    margin-bottom: 20px;
+  }
+  .BBS-curicular{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color:#554A4B;
+  }
+  
+  .BBS-curicular-special{
+      margin-top: 35px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color:#666666;
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 39px;
+  }
+  
+  .bbs-curicular-list{
+  margin-bottom: 5px;
+  }
+  
+  .first_year-head{
+    font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #554A4B;
+  }
+  
+  .first-year-title{
+    margin-top: 28px;
+    font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color:#666666;
+  }
+  
+  
+  .BBS-1st{
+    list-style:none;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #efefef;
+    padding-left: 0;
+  }
+  
+  .BBS-1stYear{
+    list-style:none;
+    padding-bottom: 40px;
+    padding-left: 0;
+  }  
+
+  .bbs-firstyear{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color:#2D3540;
+  }
+  
+  .bbs-firstyear-list{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #666666;
+  }
+  
+  .second_year-head{
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #554A4B;
+  }
+  
+  .third_year-head{
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #554A4B;
+  }
+  
+  .fourth_year-head{
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #554A4B;
+  }
+  
+  .fourth-year{
+    margin-bottom: 85px;
+  }
+  
+  /* admission */
+  
+  .bbs-admission-list{
+    margin-bottom: 20px;
+    color: #666666;
+  }
+  .BBS_admission-curicular{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color:#554A4B;
+    margin-bottom:10px;
+  }
+  
+  .BBS-admission-special{
+    margin-top: 20px;
+  }
+  
+  
+  /* grading system */
+
+
+  .BBS_grading-content{
+    margin-top:43px;
+  }
+
+  .BBS-grading{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color:#554A4B;
+    margin-bottom:10px;
+  }
+  .BBS_grading-special{
+    margin-top: 35px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+  }
+  
+  .grading-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #666666;
+  }
+  
+  .grading-list{
+    margin-top:35px;
+    margin-bottom: 85px;
+    width: 50%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666666;
+  }
+  
+  .BBS-grading-content{
+    padding-bottom: 39px;
+   }

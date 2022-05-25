@@ -1,0 +1,37 @@
+@mixin flexproperty {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+@mixin navbarItems {
+    margin-left: 10px; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #666666;
+}
+
+@mixin fotterLink{
+    color:$mytext-color1;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;    
+}
+
+@mixin fotterLinklist{
+    margin-top: 28px;
+    color:$mytext-color1;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+@mixin content{
+    margin-top: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+}

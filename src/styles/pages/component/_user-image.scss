@@ -1,0 +1,98 @@
+.alumini-main1{
+    margin-top: 38px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 50px; 
+     gap:20px;
+     flex-wrap:wrap;
+    .alumini{
+        padding-top: 38px;
+        img{
+            display: block;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            @media only screen and (max-width: 768px){
+                width:130px;
+                height: 130px;
+            }
+        }
+        .alumini-name{
+            margin-top: 12px;
+            margin-bottom: 0px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 14px;
+            color: #2D3540
+          }
+        .alumini-position{
+            margin-top: 4px;
+            text-align: center;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            color:#666666;
+        }  
+    }
+}
+
+.alumini-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 85px;
+    gap:20px;
+    flex-wrap:wrap;
+    .alumini{
+        padding-top: 38px;
+        img{
+            display: block;
+            text-align: center;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .alumini-name{
+            margin-top: 12px;
+            margin-bottom: 0px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 14px;
+            color: #2D3540
+          }
+        .alumini-position{
+            margin-top: 4px;
+            text-align: center;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            color:#666666;
+        }  
+    }
+}
+  
+.non-teaching{
+    background-color: #ffffff;
+    padding-top:35px;
+}
+
+@media only screen and (max-width:768px){
+    .alumini-main{
+        padding-bottom: 32px;
+        .alumini{
+            img{
+                width: 130px;
+                height: 130px;
+            }
+        }
+    }
+    .alumini-main1{
+        margin-top: 28px;
+    }
+}

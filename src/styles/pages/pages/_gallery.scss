@@ -1,0 +1,52 @@
+   .photo-list{
+    position: relative;
+    display: flex;
+    height: 200px;;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .photo-list .img-fluid{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+  }
+  .photo-list .overlay{
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(
+      90.09deg,
+      rgba(0, 0, 0, 0.72) 0.09%,
+      rgba(0, 0, 0, 0) 99.94%
+    );
+    border-radius: 5px;
+    color:#ffffff;
+  }
+  
+  .img-text{
+    position: absolute;
+    top:50%;
+    left:35%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .gallery-images{
+    margin-bottom: 85px;
+  }
+  
+  .overlay a{
+    color:white;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .photo-list{
+      justify-content: left;
+    }
+}

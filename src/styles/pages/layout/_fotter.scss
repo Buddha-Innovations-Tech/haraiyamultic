@@ -1,0 +1,75 @@
+.fotter{
+    width: 100%;
+    background-color: #026baf;
+    .main-fotter{
+        width: 100%;
+    .fotter-list{
+        padding-top: 64px;
+        .link{
+          @include fotterLink;
+            &-list{
+              @include fotterLinklist;
+            }
+        }
+    .quick-link{
+            margin-left: 24px;
+            @include fotterLink;
+          
+          &-list{
+            margin-left:24px;
+            @include fotterLinklist;
+          }
+        }  
+    .contact-link{
+         margin-left: 24px;
+         @include fotterLink;
+        &-list{
+            margin-left:24px;
+            @include fotterLinklist;
+            .fa-phone{
+                margin-right: 12px;
+              }
+              
+              .fa-envelope{
+                margin-right: 12px;
+              }
+              
+              .fa-location-dot{
+                margin-right: 12px;
+              }        
+        } 
+    }    
+ }
+} 
+.mini-fotter{
+    height: 40px;
+    width: 100%;
+    background-color: #000000;
+    padding: 11px;
+    .copyright{
+      text-align: center;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+  }
+  }
+}
+  
+  
+
+  
+
+  
+
+  
+
+  
+ 
+  
+
+  
+
+  
+
+  

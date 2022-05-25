@@ -1,0 +1,604 @@
+.carousel-image-item {
+    height: 500px;
+    .image {
+        width: 100%;
+        height:  500px !important;
+        @media only screen and (max-width:320px) 
+        {
+          width: 100%;
+          height: 300px !important;  
+        }
+        img{
+          visibility: hidden !important;
+        }
+      }
+      .carousel-content {
+         height: 500px;
+         background: linear-gradient(
+            90.09deg,
+            rgba(0, 0, 0, 0.72) 0.09%,
+            rgba(0, 0, 0, 0) 99.94%
+          );
+      }   
+}
+.logo-image{
+  width:20rem !important;
+}
+
+.content {
+      position: absolute;
+      bottom:180px;
+      color:white;
+
+      .carousel-quotation{
+        text-align: left;
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 49px;
+        // padding-left:0px;
+      }
+    
+    .btn-admission {
+        border: $myprimary-color;
+        background-color: $myprimary-color;
+        padding: 13px 21px;
+        position: absolute;
+        left: 0px;
+      }
+    }
+
+// college -info 
+.section-info{
+    margin-top: 64px;
+  .img-college {
+    width: 100%;
+    height: 392px;
+  }
+  .college-info{
+    margin-left: 92px;
+    margin-top: 3px;
+    font-family: $myfont-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666666;
+
+    .college-heading {
+        font-family: $myfont-family;
+        font-size: 38px;
+        line-height: 47px;
+        font-weight: 700;
+        color: #026baf;
+    }
+    .college-paragraph{
+        margin-top: 16px;
+    }
+    .btn-readmore {
+        border: #026baf;
+        background-color:$myprimary-color;
+        padding: 13px 21px;
+    }
+  }
+}
+
+// faculty
+
+ 
+.faculty{
+    margin-top: 64px;
+    width: 100%;
+    background-color: #EFEFEF;
+  
+  .faculty_heading{
+    padding-top: 64px;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 48px;
+    color: #026BAF;
+  }
+  
+  /* card */
+  .faculty-card{
+    width:100%;
+    height: 544px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    padding: 32px 22px 15px 22px;
+
+    .faculty-image{
+        width: 100%;
+        height: 265px;
+    }
+    .faculty-title{
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 33px;
+    }
+    .faculty-text{
+        margin-top: 15px;
+        color: #666666;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .bbs-btn{
+        text-align: right;
+    }
+      
+    .bbs-button{
+        padding: 13px 21px;
+        border: 1px solid $myprimary-color;
+        border-radius: 5px;
+        background-color: $mytext-color1; 
+        color:$myprimary-color;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $myprimary-color;
+            color:$mytext-color1;
+        }
+    }
+
+  }
+  
+}  
+
+// notice
+
+.notice{
+    width: 100%;
+    margin-bottom: 80px;
+    .notice_head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .notice_headling{
+            padding-top: 64px;
+
+            h1{
+                font-weight: 700;
+                font-size: 38px;
+                line-height: 48px;
+                color: #026BAF;
+            }
+        }
+        .notice-btn{
+            align-items: center;
+            padding-top: 64px;
+
+            .btn-view-notice{
+                padding: 13px 21px;
+                border: 1px solid #026baf;
+                border-radius: 5px;
+                background-color: white; 
+                color:#026baf;
+                cursor: pointer;
+            }  
+          
+          }  
+    }
+
+    .list_notice{
+        margin-top: 64px;
+
+      .events{
+        width: 100%;
+        border: 1px solid rgba(0,0,0,.125);
+        .heading{
+            padding: 15px;
+            .feature{
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                color:#262223;
+                border-bottom: 1px solid #efefef;
+              }
+        }
+        .event-list{
+            margin-left: 15px;
+            border-bottom: 0.4px solid #efefef;
+      
+            .img-event{
+                width: 73px;
+         
+                margin-right: 8px;
+            }
+            .event-info{
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+              
+            .event-title{
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                color:#4a4a4a;
+            }
+              
+            .event-calendar{
+                text-align: right;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 15px;
+                color:#666666;
+            }  
+          }
+        
+        .event-last{
+            margin-left: 15px;
+            .img-event{
+                width: 73px;
+                margin-right: 8px;
+            }
+            .event-info{
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+              
+            .event-title{
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 15px;
+                color:#4a4a4a;
+            }
+              
+            .event-calendar{
+                text-align: right;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 15px;
+                color:#666666;
+            }  
+        }
+
+      } 
+  }
+}
+
+.event-link{
+  text-decoration: none;
+}
+
+
+//student feedback
+.testomonials{
+    width: 100%;
+    background-color: #EFEFEF;
+    .testomonial-head{
+        padding-top: 64px;
+        .testomonial_heading{
+            font-weight: 700;
+            font-size: 38px;
+            line-height: 48px;
+            color: #026BAF;
+        }
+    }
+    .list_testomonial{
+        margin-top: 64px;
+
+        .testomonial{
+            width: 100%;
+            border-radius: 5px;
+            background-color:#ffffff;
+            margin-bottom: 80px;
+          .testomonial-info{
+            padding:39px 0px 18px 0;
+            margin-left: 18px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px; 
+            .fa-quote-left{
+                font-size: 50px;
+                color: rgba(2, 107, 175, 0.37);
+            }
+            
+            .testomoinal-title{
+                margin:0px 18px 22px 56px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #666666;
+            }
+          }
+          .testomonial-body{
+            background-color: #026baf;
+            // height: 185px !;
+            width: 100%;
+          .testomonial_image{
+            text-align: center;
+            margin-top: 30px;
+
+            .student-image{
+                margin-top: -50px;
+              }
+         
+              .student-name{
+                margin-top: 12px;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+                color: white;
+              }
+              
+              .student-year{
+                margin-top: -12px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: white;
+                text-align: center;
+                padding-bottom: 35px;
+              }
+          }
+        }
+      }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .logo-image{
+    width:15rem !important;
+  }
+  
+  .top-navbar{
+    display: none;
+  }
+
+  .section-info{
+    .college-info{
+      margin-left: 0px !important;
+      padding-top: 24px !important;
+  
+      .college-paragraph{
+        margin-top: 20px !important;
+        margin-bottom: 24px !important;
+      }
+
+      .college-heading{
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    .navbar-brand{
+      margin-top: 10px;
+    }
+  }
+  .top-phone{
+    display: block;
+    margin-top: 5px;
+  }
+  .faculty{
+    .faculty_heading{
+      padding-top: 64px !important;
+      font-size: 32px;
+    
+    }
+    .faculty-card{
+      margin-top:20px;
+      padding: 20px 15px 8px 15px;
+      height: 500px;
+      margin-bottom: 40px;
+      .faculty-title{
+        font-size: 20px;
+        margin-left: 0px;
+      }
+      .faculty-text{
+        margin-top:8px;
+        font-size: 14px;
+        line-height: 21px;
+      }
+      .bbs-button{
+        padding: 8px 10px;
+      }
+    }
+
+  } 
+  .notice{
+    .notice_head{
+      .notice_headling h1{
+        font-size: 32px;
+        line-height: 40px;
+      }
+      .notice-btn{
+        .btn-view-notice{
+          padding: 13px 13px;
+      }    
+      }
+      .notice-btn:hover{
+        color: #026BAF;
+      }
+
+    }
+    .list_notice{
+      .events{
+        margin-bottom: 64px;
+        .event-list{
+          .img-event{
+            width: 112px;
+            margin-right:24px
+          }
+          .event{
+          .event-title{
+            font-size: 15px;
+          }
+        }
+        .event-calendar{
+          margin-top: 14px;
+        }
+      }
+      .event-last{
+        .img-event{
+          width: 112px;
+          margin-right:24px
+        }
+        .event{
+        .event-title{
+          font-size: 15px;
+        }
+      } 
+      }
+      }
+  }
+
+
+  }
+  .testomonials{
+    
+    .testomonial-head{
+        .testomonial_heading{
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    .list_testomonial{
+      .testomonial{
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .fotter{
+   .main-fotter{
+    .fotter-list{
+      .link {
+        text-align: left;
+        }
+      .link-list{
+        font-size: 14px !important;
+        text-align: left;
+        padding-bottom: 24px;
+      } 
+      .quick-link{
+        text-align: left;
+        margin-left: 0px !important;
+      } 
+      .quick-link-list{
+        font-size: 14px !important;
+        text-align: left;
+        padding-bottom: 24px;
+        margin-left: 0px !important;
+      } 
+      .contact-link{
+        text-align: left;
+        margin-left: 0px !important;
+      }
+      .contact-link-list{
+        font-size: 14px !important;
+        padding-bottom: 24px;
+        text-align: left;
+        margin-left: 0px !important;
+      }
+
+    }
+   } 
+   .mini-fotter{
+     .copyright{
+      font-size: 9px !important;
+      text-align: left !important;
+     }
+   }
+}
+
+.navbar{
+  .navbar-nav{
+    margin-top: 10px;
+    .dropdown{
+      .navbar-list{
+        margin-left: 0px;
+      }
+    }
+    .nav-list2{
+      margin-left: 0px;
+    }
+  }
+}
+
+}
+
+@media only screen and (max-width:390px)
+{
+  .carousel-image-item{
+    height: 300px !important;
+    .image{
+      width: 100%;
+      height: 258px !important;
+    }
+  }
+  .carousel-caption{
+    .content{
+      bottom: 115px;
+      .carousel-quotation{
+        font-size: 20px;
+        line-height: 30px;
+      }
+      .btn-admission{
+         padding: 7px 14px;
+      }
+    }
+  }  
+}
+
+@media only screen and (max-width:390px){
+  .section-info{
+    margin-top: 10px;
+  .img-college {
+    width: 100%;
+    height: 250px;
+  }
+}
+.faculty{
+  margin-top: 24px;
+  .faculty_heading{
+    padding-top: 32px !important;
+  }
+  .faculty-body{
+    padding-left: 0px;
+  }
+  .faculty-card{
+    margin-top: 10px;
+    margin-bottom: 32px;
+  }
+}
+
+.notice{
+  margin-bottom: 40px;
+  .notice_head{
+    .notice-btn{
+      padding-top: 20px;
+      .btn-view-notice{
+        padding: 5px;
+      }
+    } 
+    .notice_headling{
+      padding-top: 32px;
+    }
+  }  
+  .list_notice{
+    margin-top: 40px;
+  }
+}
+
+.testomonials{
+  .testomonial-head{
+    padding-top: 32px;
+  }
+  .list_testomonial{
+    margin-top: 32px;
+    padding-bottom: 30px;
+  }
+}
+.fotter{
+  .mini-fotter{
+    padding-top: 10px;
+    .copyright{
+      font-size: 9px !important;
+      text-align: center !important;
+      line-height: 15px !important;
+      
+      
+
+    }
+  } 
+} 
+}

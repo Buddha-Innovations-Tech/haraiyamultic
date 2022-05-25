@@ -1,0 +1,131 @@
+.cover-image{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 252px;
+    align-items: center;
+    justify-content: center;
+    .img-cover{
+        position: absolute;
+        width: 100%;
+        height: 252px;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cover-image-overlay{
+        position: absolute;
+        width: 100%;
+        height: 252px;
+        background: linear-gradient(90.09deg, 
+        rgba(0, 0, 0, 0.72) 0.09%,
+        rgba(0, 0, 0, 0) 99.94%);
+        color:#ffffff;
+      }
+
+    .contact-banner-content{
+      position: absolute;
+      top:25%;
+      .breadcrumb{
+        margin-top: 15px !important;
+        .breadcrumb-item1{
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          color: #d5d5d5;
+          text-decoration: none;
+        }
+        
+        .breadcrumb-item2{
+          color: #ffffff !important;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+        }
+      
+      }
+    }
+}
+
+.banner-image{
+  position: relative;
+  display: flex;
+  height: 367px;
+  align-items: center;
+  justify-content: center;
+  .img-banner{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: 367px;
+    background-size: cover;
+    background-position: center;
+  }
+  .overlay{
+  position: absolute;
+  width: 100%;
+  height: 367px;
+  background: linear-gradient(90.09deg, 
+  rgba(0, 0, 0, 0.72) 0.09%,
+  rgba(0, 0, 0, 0.40) 99.94%);
+  color:#ffffff;
+  .alumini-banner-content{
+    position: absolute;
+    top:35%;
+    .alumini-heading{
+      color:#ffffff;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 49px;
+    }
+    .breadcrumb{
+      margin-top: 15px !important;
+      .breadcrumb-item1{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #d5d5d5;
+        text-decoration: none;
+      }
+      
+      .breadcrumb-item2{
+        color: #ffffff !important;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  } 
+}
+}
+
+@media only screen and (max-width:390px){
+  .banner-image{
+    height: 168px;
+    .img-banner{
+      height: 168px;
+    }
+    .overlay{
+      height: 168px;
+      .alumini-banner-content{
+        .alumini-heading{
+          font-size: 18px;
+          line-height: 25px;
+          font-weight: 500px;
+        }
+        .breadcrumb{
+          .breadcrumb-item1{
+            font-size: 10px;
+          }
+          .breadcrumb-item2{
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }  
+  .about-list{
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,173 @@
+.navFullWrappper{
+    height: 45px;
+    @include flexproperty;
+    color:$mytext-color1;
+    .navWrapper-address {
+        @include flexproperty;
+        .phone-no{
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            margin-right:35px;
+
+            .fa-solid{
+                font-size: 15px;
+                margin-right: 10px;
+            }
+        }
+
+        .email{
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+
+            .fa-solid{
+                font-size: 15px;
+                margin-right:10px;
+            }
+        }
+
+    }    
+
+    .navWrapper-zone {
+        @include flexproperty;
+        .student{
+            margin-right: 35px;
+            a{
+                color:$mytext-color1;
+                text-decoration: none;
+            }
+            .student-zone{
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 22px;
+            }
+        
+            
+        }
+
+        .login{
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            .fa-solid{
+                font-size: 15px;
+                margin-right: 10px;
+            }
+        }
+        
+    }
+     
+}
+
+.navbar{
+    align-items: center;
+    font-family: $myfont-family;
+    .navbar-nav{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #666666;
+        .nav-link{
+            &:hover{
+                color: #026baf !important; 
+            }
+            &:active{
+                color: #026baf !important;
+            }
+        }
+ 
+        .dropdown{
+            
+            .navbar-list {
+                margin-left: 10px; 
+                }
+            .dropdown-intro{
+                height: 200px;
+                padding: 0px;
+                margin: 0px;
+
+                .intro{
+                    display: block;
+                    height: 40px;
+                    padding: 10px 15px 0 20px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color:#666666;
+                }
+                .intro:hover{
+                    display: block;
+                    height: 40px;
+                    padding: 10px 15px 0 20px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    background: #026BAF;
+                    color:White;
+                }
+                // .dropdown-list{
+                //     height: 80px;
+                //     padding: 0px;
+                //     margin: 0px;
+
+
+                //     // .dropdown-item:hover{
+                //     //     background-color: #026baf;
+                //     //   }
+                //   }
+                  
+                }
+            }
+            .dropdown-list{
+                height: 80px;
+                padding: 0px;
+                margin: 0px;
+
+                .intro{
+                    display: block;
+                    height: 40px;
+                    padding: 10px 15px 0 20px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color:#666666;
+                }
+                .intro:hover{
+                    display: block;
+                    height: 40px;
+                    padding: 10px 15px 0 20px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    background: #026BAF;
+                    color:White;
+                }
+            }
+        .nav-list2{
+            margin-left: 10px; 
+          }
+        .nav-contact{
+            padding-right: 0px !important;
+        }
+
+    }
+
+
+    
+}
+
+/* .navbar .navbar-nav .nav-link::after{
+content: '';
+background-color: #026baf;
+display: block;
+height: 3px;
+width: 120px;
+margin: 20px auto 5px;
+} */
+
+
+
+
+
+

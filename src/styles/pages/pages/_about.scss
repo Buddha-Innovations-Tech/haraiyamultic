@@ -1,0 +1,341 @@
+  .about-list{
+    padding-top: 35px;
+  }
+  .first-container{
+    background-color: #FAFAFA;
+    // padding-bottom: 60px;
+  }
+
+  .team-head{
+  margin-top: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color:#026baf;
+  margin-bottom: 0px;
+  }
+
+  .non-teaching{
+    color:#ffffff
+  }
+  
+  
+  .body-paragraph{
+  margin-top: 35px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color:#554A4B;
+  margin-bottom: 0px;
+  }
+  
+  .body-paragraph2{
+  margin-top: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color:#554A4B;
+  }
+  
+  .goal-paragraph{
+    margin-top: 35px;
+    margin-bottom: 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#554A4B;
+    }
+  
+    .goal-list{
+      margin-top: 44px;
+      margin-bottom: 0px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: #666666;
+      margin-bottom: 85px;
+      .goal-list2{
+        margin-bottom: 20px;
+      }
+    }
+  
+.img-goal{
+  .image-goal{
+    margin-top: 44px;
+    width:100%;
+        height: 510px;
+        border-radius: 5px;
+  }
+}
+.about-img{
+    margin-top: 37px;
+    position: relative;
+    width: 100%;
+    height: 396px;
+    background-size: cover;
+    border-radius: 5px;
+    background-position: center;
+}
+  
+  .vision-img{
+    margin-top: 37px;
+    position: relative;
+    width: 100%;
+    height:400px;
+  }
+  .second-div{
+    margin-top: 50px;
+    background-color: #ffffff;
+    margin-bottom:50px;
+  }
+  .third-div{
+    padding-top: 30px;
+    background-color: #fafafa;
+  }
+  .goal-head{
+    width:90%
+  }
+  
+  /* message */
+  
+  .message-campuschief{
+    margin-top: 54px;
+    margin-bottom: 40px;
+    .img-campuschief{
+      width: 286px;
+      height: 284px;
+      border-radius: 5px;
+    }
+    .chief-name{
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      color: #666666;
+      text-align: center;
+    }
+
+    .chief-position{
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      color:#666666; 
+    }
+  }
+
+  
+  .img-chairman{
+  width: 286px;
+  height: 284px;
+  border-radius: 5px;
+  }
+  
+  .campus-paragraph{
+    margin-left: 45px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+  }  
+  .campus-paragraph1{
+    margin-left: 45px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+  }
+    
+  .campus-paragraph2{
+    margin-left: 45px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+  }
+    
+  .campus-paragraph3{
+    margin-left: 45px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+  }
+  
+  
+.message-chairman{
+  padding-top: 1px;
+  background-color: #ffffff;
+  .chairman-paragraph{
+    margin-right: 45px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+    }
+    
+  .chairman-paragraph1{
+    margin-right: 45px;
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color:#666666;
+    }
+}
+  
+  
+          /* cells
+           */
+
+          .cells-list{
+            margin-top: 40px;
+            .cells-tabs{
+              border: 1px solid #ebebeb;
+              .cells-tabs-list{
+                background: #026baf;
+                a{
+                  color:white;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                }
+                .a:hover{
+                  background: #026baf;
+                  color:white;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                }
+              } 
+
+              .cells-tabs-lists{ 
+                a{
+                  color: #026baf;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                }
+                a:hover{
+                  background: #026baf;
+                  color:white;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        .cells-head{
+          margin-left: 24px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          color:#554A4B;
+          .cells-team{
+            margin-left: 20px;
+          }
+        }
+        .cells{
+          display: flex;
+          justify-content: space-between;
+        }  
+        .cells-main1{
+          margin-top: 24px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+  
+        .cells-main{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 85px;
+        }
+
+        
+@media only screen and (max-width: 768px) {
+  .about-img{
+    height: 240px;
+  }
+  .vision-img{
+    height: 240px;
+  }
+ .image-goal{
+   height: 240px !important;
+  }
+  .message-campuschief{
+    .chief-name{
+      text-align: left;
+    }
+    .chief-position{
+      text-align: left;
+    }
+  }
+
+  .message-chairman{
+    .row{
+      flex-direction: column-reverse;
+    }
+    .chief-name{
+      text-align: left;
+    }
+    .chief-position{
+      text-align: left;
+    }
+  }
+  .campus-paragraph{
+    margin-left: 0px;
+  }
+  .campus-paragraph1{
+    margin-left: 0px;
+  }
+  .campus-paragraph2{
+    margin-left: 0px;
+  }
+  .campus-paragraph3{
+    margin-left: 0px;
+  }
+  .haraiya-intro{
+    .first-div{
+      .row{
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  .second-div{
+    margin-top: 20px;
+    margin-bottom: 32px;
+    .row{
+      flex-direction: row-reverse;
+    }
+  }
+  .third-div{
+    padding-top: 10px;
+    .row{
+      flex-direction: column-reverse;
+    }
+  }
+  .goal-list{
+    margin-bottom: 32px;
+  }
+  .team-head{
+    margin-top: 28px;
+  }
+}  
+

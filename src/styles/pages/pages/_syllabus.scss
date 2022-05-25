@@ -1,0 +1,51 @@
+.syllabus-list{
+  margin-bottom: 85px;
+  .syllabus-heading{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color:#554A4B;
+  }
+  .list-bbs{
+    margin-top: 40px;
+    @media only screen and (max-width: 768px){
+      text-align: center;
+    }
+    .first-year{
+      width: 220px;
+      height: 126px;
+      border: 0.25px solid #eaeaea;
+      border-radius: 5px;
+      .fa-download{
+        font-size: 14px;
+        display: flex;
+        justify-content: end;
+        margin: 13px 13px 0px 0px;
+        color: #808080;
+    }
+    .img-syllabus{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 25%;
+    }
+    .syllabus{
+      align-items: center;
+      text-align: center;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #666666;
+    }
+  }
+  }
+}
+.syllabus-head{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color:#554A4B;
+}
