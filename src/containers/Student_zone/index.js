@@ -1,16 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NoticeBannerImage from "../../images/notice1.png";
 import EventImage from "../../images/event-image.png";
+import gql from "graphql-tag";
+import Query from "../../components/Query";
+import Moment from "react-moment";
+import { useQuery } from "@apollo/react-hooks";
 
-const StudentZone = () => {
+const GET_EVENTS = gql`
+  query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
+    events(first: $first, last: $last, after: $after, before: $before) {
+      edges {
+        cursor
+        node {
+          date
+          slug
+          events {
+            eventtype
+            description
+            title
+            featuredimage {
+              sourceUrl
+            }
+            image {
+              sourceUrl
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+`;
+
+const updateQuery = (previousResult, { fetchMoreResult }) => {
+  return fetchMoreResult.events.edges.length ? fetchMoreResult : previousResult;
+};
+const ComponentPage = ({ error, loading, data, fetchMore }) => {
+  console.log(data);
+  const [filterTerm, setFilterTerm] = useState("All Events");
+  const { events } = data;
   return (
     <>
       <div className="banner-image">
         <img src={NoticeBannerImage} alt="" className="img-banner" />
         <div className="overlay">
-          <div className="container">
+          <Container>
             <div className="alumini-banner-content">
               <h1 className="alumini-heading">
                 We'd love to hear from <br />
@@ -32,262 +73,140 @@ const StudentZone = () => {
                 </ol>
               </nav>
             </div>
-          </div>
+          </Container>
         </div>
       </div>
 
       <Container>
         <div className="notices">
           <div className="event">
-            <h1 className="notice-head">Student zone</h1>
-          </div>
-          <div className="event-cat">
-            <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Student Zone
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <Link to="/student_zone" className="dropdown-item">
-                  Student Zone
-                </Link>
-                <Link to="/event" className="dropdown-item">
-                  All event
-                </Link>
-              </div>
-            </div>
+            <h1 className="notice-head">Events</h1>
           </div>
         </div>
         <div className="events-list">
           <div className="row gx-3 gy-5">
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {events.edges
+              ?.filter((i) => i.node.events.eventtype === "Student Zone")
+              .map((a) => {
+                return (
+                  <div className="col-md-4">
+                    <div className="card">
+                      <img
+                        className="card-img-top event-img"
+                        src={a.node.events.featuredimage.sourceUrl}
+                        alt="Card image cap"
+                      />
+                      <div className="event-body">
+                        <p className="notice-title">{a.node.events.title}</p>
+                        <p
+                          className="notice-text"
+                          dangerouslySetInnerHTML={{
+                            __html: a.node.events.description,
+                          }}
+                        />
 
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
+                        <div className="btn-event">
+                          <div className="date">
+                            <p>
+                              <Moment format="YYYY-MM-DD">{a.node.date}</Moment>
+                            </p>
+                          </div>
+                          <div>
+                            <Link
+                              to={`/event_description/${a.node.slug}`}
+                              className="event-link"
+                            >
+                              Read More
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <img
-                  className="card-img-top event-img"
-                  src={EventImage}
-                  alt="Card image cap"
-                />
-                <div className="event-body">
-                  <p className="notice-title">
-                    Entrance exam for Fresher Students 2077 (BBS)
-                  </p>
-                  <p className="notice-text">
-                    लुम्बिनी प्रदेश स्थापना दिवसको अवसरमा सामाजिक विकास डिभिजन
-                    कार्यालय रुपन्देहीले यहि फाल्गुन १ गते .......
-                  </p>
-                  <div className="btn-event">
-                    <div className="date">
-                      <p>
-                        <i className="fa-solid fa-calendar"></i>29 sep 2020
-                      </p>
-                    </div>
-                    <div>
-                      <Link to="#" className="event-link">
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                );
+              })}
           </div>
         </div>
 
         <div className="event-pagination">
           <nav aria-label="Page navigation example">
             <ul className="pagination">
-              <li className="page-item">
-                <Link to="#" className="page-link" aria-label="Previous">
-                  <span className="sr-only">Previous</span>
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link to="#" className="page-link notice-current_page">
-                  1
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link to="#" className="page-link notice-current_page">
-                  2
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link to="#" className="page-link notice-current_page">
-                  3
-                </Link>
-              </li>
-              <li className="page-item">
-                <Link to="#" className="page-link" aria-label="Next">
-                  <span className="sr-only">Next</span>
-                </Link>
-              </li>
+              {events.pageInfo.hasPreviousPage ? (
+                <li className="page-item">
+                  <button
+                    className="page-link"
+                    aria-label="Previous"
+                    onClick={() => {
+                      fetchMore({
+                        variables: {
+                          first: null,
+                          after: null,
+                          last: 1,
+                          before: events.pageInfo.startCursor || null,
+                        },
+                        updateQuery,
+                      });
+                    }}
+                  >
+                    <span className="sr-only">Previous</span>
+                  </button>
+                </li>
+              ) : null}
+
+              {events.pageInfo.hasNextPage ? (
+                <li className="page-item">
+                  <button
+                    className="page-link"
+                    aria-label="Next"
+                    onClick={() => {
+                      fetchMore({
+                        variables: {
+                          first: 1,
+                          after: events.pageInfo.endCursor || null,
+                          last: null,
+                          before: null,
+                        },
+                        updateQuery,
+                      });
+                    }}
+                  >
+                    <span className="sr-only">Next</span>
+                  </button>
+                </li>
+              ) : null}
             </ul>
           </nav>
         </div>
       </Container>
     </>
+  );
+};
+const StudentZone = () => {
+  const variables = {
+    first: 1,
+    last: null,
+    after: null,
+    before: null,
+  };
+  const { data, error, loading, fetchMore } = useQuery(GET_EVENTS, {
+    variables,
+  });
+
+  if (error) {
+    return <pre>{JSON.stringify(error)}</pre>;
+  }
+
+  if (loading) {
+    return null;
+  }
+
+  return (
+    <ComponentPage
+      error={error}
+      loading={loading}
+      data={data}
+      fetchMore={fetchMore}
+    />
   );
 };
 

@@ -254,7 +254,10 @@
   background-color: #ffffff;
   padding-top: 35px;
 }
-
+.login-page{
+  width: 50%;
+  margin: 0 auto;
+}
 @media only screen and (max-width: 768px) {
   .alumini-main {
     padding-bottom: 32px;
@@ -269,7 +272,7 @@
 }
 
 .navFullWrappper {
-  height: 45px;
+ padding: 3px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,23 +504,23 @@ margin: 20px auto 5px;
 }
 
 .carousel-image-item {
-  height: 500px;
-}
-
-.carousel-image-item .image {
+  position: relative;
+  height: 100%;
   width: 100%;
-  height: 500px !important;
 }
 
-@media only screen and (max-width: 320px) {
-  .carousel-image-item .image {
-    width: 100%;
-    height: 300px !important;
-  }
+.carousel-image-item img {
+  height: 600px;
+  width: 100% !important;
 }
 
-.carousel-image-item .image img {
-  visibility: hidden !important;
+.carousel-image-item .overlayhero {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  
+  background: linear-gradient(90.09deg, rgba(0, 0, 0, 0.72) 0.09%, rgba(0, 0, 0, 0.4) 99.94%);
 }
 
 .carousel-image-item .carousel-content {
@@ -528,13 +531,23 @@ margin: 20px auto 5px;
 .logo-image {
   width: 20rem !important;
 }
-
+.carousel-control-next{
+  top: 30px !important;
+}
+.carousel-control-prev{
+  top: 30px !important;
+}
 .content {
+  width: 50%;
   position: absolute;
-  bottom: 180px;
+  bottom: 250px;
   color: white;
 }
-
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
 .content .carousel-quotation {
   text-align: left;
   font-weight: 700;
@@ -590,7 +603,7 @@ margin: 20px auto 5px;
 .faculty {
   margin-top: 64px;
   width: 100%;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   /* card */
 }
 
@@ -599,7 +612,7 @@ margin: 20px auto 5px;
   font-weight: 700;
   font-size: 38px;
   line-height: 48px;
-  color: #026BAF;
+  color: #026baf;
 }
 
 .faculty .faculty-card {
@@ -640,6 +653,7 @@ margin: 20px auto 5px;
   background-color: #ffffff;
   color: #026baf;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .faculty .faculty-card .bbs-button:hover {
@@ -672,7 +686,7 @@ margin: 20px auto 5px;
   font-weight: 700;
   font-size: 38px;
   line-height: 48px;
-  color: #026BAF;
+  color: #026baf;
 }
 
 .notice .notice_head .notice-btn {
@@ -777,7 +791,7 @@ margin: 20px auto 5px;
 
 .testomonials {
   width: 100%;
-  background-color: #EFEFEF;
+  background-color: #efefef;
 }
 
 .testomonials .testomonial-head {
@@ -788,7 +802,7 @@ margin: 20px auto 5px;
   font-weight: 700;
   font-size: 38px;
   line-height: 48px;
-  color: #026BAF;
+  color: #026baf;
 }
 
 .testomonials .list_testomonial {
@@ -855,12 +869,66 @@ margin: 20px auto 5px;
   padding-bottom: 35px;
 }
 
+.navbar-large {
+  display: block !important;
+}
+
+.navbar-small {
+  display: none !important;
+}
+
+.carousel {
+  width: 100% !important;
+}
+
+.list_testomonial .carousel {
+  width: 75% !important;
+  margin: 0 auto !important;
+}
+
+.testomonial_image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navbar-large {
+    display: none !important;
+  }
+  .navbar-small {
+    display: block !important;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .offcanvas-end {
+    width: 100% !important;
+  }
+  .first-div-form{
+    display: block !important;
+  }
+  .second-div-form-content{
+    margin-top: 30px;
+  }
   .logo-image {
     width: 15rem !important;
   }
-  .top-navbar {
-    display: none;
+  .navFullWrappper .navWrapper-address,.navFullWrappper .navWrapper-zone{
+    display: block;
+  }
+  .content{
+    width: 100%;
+  }
+  /* .top-navbar {
+    display: block;
+  } */
+
+  .navFullWrappper{
+    height: 100%;
+    padding: 5px 0;
   }
   .section-info .college-info {
     margin-left: 0px !important;
@@ -911,7 +979,7 @@ margin: 20px auto 5px;
     padding: 13px 13px;
   }
   .notice .notice_head .notice-btn:hover {
-    color: #026BAF;
+    color: #026baf;
   }
   .notice .list_notice .events {
     margin-bottom: 64px;
@@ -982,14 +1050,47 @@ margin: 20px auto 5px;
     margin-left: 0px;
   }
 }
-
-@media only screen and (max-width: 390px) {
-  .carousel-image-item {
-    height: 300px !important;
+@media only screen and (max-width: 425px){
+  .middle-name,.first-name{
+    margin-bottom: 20px;
   }
+  .cells-list .cells-tabs {
+    margin-bottom: 30px;
+  }
+  .carousel-caption .content .carousel-quotation {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .carousel-caption .content{
+    bottom: 100px;
+  }
+  .carousel-image-item img {
+    width: 100%;
+    height: 250px !important;
+    object-fit: cover;
+  }
+  .top-phone,.top-email,.login a{
+    font-size: 12px;
+
+  }
+  .logo-image{
+    width: 12rem !important;
+  }
+ .navFullWrappper{
+  padding: 2px 0;
+ }
+  .navFullWrappper .navWrapper-zone .student.student-zone{
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  /* .carousel-image-item {
+    height: 300px !important;
+  } */
   .carousel-image-item .image {
     width: 100%;
-    height: 258px !important;
+    height: 100% !important;
+    object-fit: cover;
   }
   .carousel-caption .content {
     bottom: 115px;
@@ -1054,6 +1155,46 @@ margin: 20px auto 5px;
     text-align: center !important;
     line-height: 15px !important;
   }
+}
+
+@media all and (max-width: 1040px) {
+  #dropdown-basic {
+    padding: 0 !important;
+  }
+  .dropdown-menu {
+    margin-top: 1rem !important;
+  }
+}
+
+.activeSidebar {
+  color: color(primary, base);
+}
+
+.notActive {
+  color: color(text-light);
+}
+
+section[role="navDrop"] .btn-success {
+  color: color(text-light);
+  background-color: #ffffff;
+  border: none;
+}
+
+section[role="navDrop"] .btn-check:active + .btn-success,
+section[role="navDrop"] .btn-check:checked + .btn-success,
+section[role="navDrop"] .btn-success.active,
+section[role="navDrop"] .btn-success:active,
+section[role="navDrop"] .show > .btn-success.dropdown-toggle {
+  color: color(text-light);
+  background-color: #ffffff;
+  border: none;
+}
+
+.img-event {
+  width: 75px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .contact-heading {
@@ -1192,8 +1333,17 @@ margin: 20px auto 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  background: #026BAF;
+  background: #026baf;
   color: White;
+}
+
+.notice-select {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  padding: 7px 5px;
+  border-radius: 5px;
+  width: 140px;
 }
 
 .img-event-description {
@@ -1595,7 +1745,7 @@ margin: 20px auto 5px;
 }
 
 .first-container {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .team-head {
@@ -1618,7 +1768,7 @@ margin: 20px auto 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #554A4B;
+  color: #554a4b;
   margin-bottom: 0px;
 }
 
@@ -1628,7 +1778,7 @@ margin: 20px auto 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #554A4B;
+  color: #554a4b;
 }
 
 .goal-paragraph {
@@ -1638,21 +1788,23 @@ margin: 20px auto 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #554A4B;
+  color: #554a4b;
 }
 
 .goal-list {
+  padding-left: 0.5rem !important;
   margin-top: 44px;
   margin-bottom: 0px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #666666;
+  color: #554a4b;
   margin-bottom: 85px;
 }
 
 .goal-list .goal-list2 {
+  list-style: none !important;
   margin-bottom: 20px;
 }
 
@@ -1804,7 +1956,13 @@ margin: 20px auto 5px;
 }
 
 .cells-list .cells-tabs .cells-tabs-list {
-  background: #026baf;
+padding: 10px 5px;
+cursor: pointer;
+
+}
+.cells-list .cells-tabs .cells-tabs-list:hover{
+  background-color: #026baf !important;
+  color: #fff;
 }
 
 .cells-list .cells-tabs .cells-tabs-list a {
@@ -1842,7 +2000,7 @@ margin: 20px auto 5px;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  color: #554A4B;
+  color: #554a4b;
 }
 
 .cells-head .cells-team {
@@ -1957,6 +2115,10 @@ margin: 20px auto 5px;
   }
 }
 
+.navtab-bg {
+  background-color: #fafafa !important;
+}
+
 .admission-banner-image {
   position: relative;
   display: -webkit-box;
@@ -2016,7 +2178,7 @@ margin: 20px auto 5px;
 .admission-head {
   background: #026baf;
   color: white;
-  width: 1135px;
+  width: 100%;
   height: 60px;
   font-style: normal;
   font-weight: 500;
@@ -2549,6 +2711,10 @@ margin: 20px auto 5px;
   font-size: 13px;
   line-height: 24px;
 }
+.fotter .main-fotter .fotter-list .link-list a{
+  color: #fff ;
+  text-decoration: none;
+}
 
 .fotter .main-fotter .fotter-list .quick-link {
   margin-left: 24px;
@@ -2566,7 +2732,10 @@ margin: 20px auto 5px;
   font-size: 13px;
   line-height: 24px;
 }
-
+.fotter .main-fotter .fotter-list .quick-link-list a{
+  color: #fff !important;
+  text-decoration: none;
+}
 .fotter .main-fotter .fotter-list .contact-link {
   margin-left: 24px;
   color: #ffffff;
@@ -2612,7 +2781,7 @@ margin: 20px auto 5px;
 }
 
 .card-body {
-  border-top: 1px solid #DFDFDF;
+  border-top: 1px solid #dfdfdf;
 }
 
 .card-body .card_notice {
@@ -2661,6 +2830,13 @@ margin: 20px auto 5px;
   color: #666666;
 }
 
+.card-body .notice-text p {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card-body .btn-notices {
   text-align: right;
 }
@@ -2682,7 +2858,7 @@ margin: 20px auto 5px;
   font-weight: 600;
   font-size: 22px;
   line-height: 33px;
-  color: #554A4B;
+  color: #554a4b;
 }
 
 .events-list .event-body .notice-text {
@@ -2722,7 +2898,14 @@ margin: 20px auto 5px;
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  color: #026BAF;
+  color: #026baf;
+}
+
+.notice-text p {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .contact-button {
@@ -2737,10 +2920,24 @@ body {
 }
 
 .top-navbar {
-  height: 45px;
+  height: 100%;
+  padding: 5px 0;
   background-color: #026baf;
 }
+.message-campuschief:nth-child(odd) .nthselectorcss  {
+  order: 2;
+}
+.fixedtopnavbar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75);
 
+}
 /* navbar css */
 /* carousel */
 /* about haraiya section */

@@ -1,99 +1,108 @@
-.card-body{
-    border-top: 1px solid #DFDFDF;
+.card-body {
+  border-top: 1px solid #dfdfdf;
 
-.card_notice{
+  .card_notice {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .notice_cllg_name{
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 15px;
-        color:#666666;
-      }
-      
-      .notice_date{
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 15px;
+    .notice_cllg_name {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 15px;
+      color: #666666;
+    }
+
+    .notice_date {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 15px;
+      color: #666666;
+      .fa-calendar {
+        margin: 5px;
+        font-size: 12px;
         color: #666666;
-        .fa-calendar{
-            margin:5px;
-            font-size: 12px;
-            color: #666666;
-          }
-
-      }            
-
-}
-.notice-title{
+      }
+    }
+  }
+  .notice-title {
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;
     color: #000000;
   }
-  .notice-text{
+  .notice-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     color: #666666;
+    p {
+      white-space: nowrap;
+      width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
-  .btn-notices{
+  .btn-notices {
     text-align: right;
-    .btn-notice{
-        text-align: right;
-        padding: 13px 21px;
-        background-color:$myprimary-color;
-        border-radius: 5px;
-      }
-  }          
+    .btn-notice {
+      text-align: right;
+      padding: 13px 21px;
+      background-color: $myprimary-color;
+      border-radius: 5px;
+    }
+  }
 }
 
-.events-list{
-    .event-img{
-        padding: 20px 14px;
+.events-list {
+  .event-img {
+    padding: 20px 14px;
+  }
+  .event-body {
+    .notice-title {
+      padding: 0px 14px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
+      color: #554a4b;
     }
-    .event-body{
-        .notice-title{
-        padding: 0px 14px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 33px;
-        color:#554A4B;
-        }
-        .notice-text{
-            padding: 15px 14px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 33px;
-            color:#666666;
-        }
-        .btn-event{
-            display: flex;
-            justify-content: space-between;
-            margin-left: 14px;
-            margin-top: 23px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
-            color: #666666;
-            .fa-calendar{
-                color: #666666;
-                margin-right: 5px;
-            }
-        }
-        .event-link{
-            text-decoration: none;
-            padding-right: 14px;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 21px;
-            color: #026BAF;;
-        }
-
-    }  
+    .notice-text {
+      padding: 15px 14px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 33px;
+      color: #666666;
+    }
+    .btn-event {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 14px;
+      margin-top: 23px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #666666;
+      .fa-calendar {
+        color: #666666;
+        margin-right: 5px;
+      }
+    }
+    .event-link {
+      text-decoration: none;
+      padding-right: 14px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #026baf;
+    }
+  }
+}
+.notice-text p {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

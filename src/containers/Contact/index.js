@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import BannerImage from "../../images/banner-image.png";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
-
+import axios from "axios";
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(`https://sajhamail.herokuapp.com/api/mail/message`, {
+        name,
+        phonenumber,
+        email,
+        message,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+    setName("");
+    setPhoneNumber("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <>
       <div className="banner-image">
@@ -57,7 +80,7 @@ const Contact = () => {
           </div>
           <div className="col-md-6 order-1 order-sm-1 order-md-2">
             <div className="contact-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <h1 className="contact-title">Get in touch</h1>
                 <div className="form-group contact-detail">
                   <label className="form-field">
@@ -67,6 +90,9 @@ const Contact = () => {
                     type="text"
                     className="form-control contact-placeholder"
                     placeholder="Enter your full name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group contact-detail">
@@ -77,6 +103,9 @@ const Contact = () => {
                     type="number"
                     className="form-control contact-placeholder"
                     placeholder="Enter phone number"
+                    value={phonenumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group contact-detail">
@@ -87,6 +116,9 @@ const Contact = () => {
                     type="email"
                     className="form-control contact-placeholder"
                     placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group contact-detail">
@@ -96,6 +128,9 @@ const Contact = () => {
                   <textarea
                     className="form-control contact-placeholder"
                     rows="3"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
                   ></textarea>
                 </div>
                 <button

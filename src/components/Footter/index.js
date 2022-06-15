@@ -26,20 +26,34 @@ const Fotter = () => {
                 <div className="col-md-3">
                   <h3 className="quick-link">Quick Link</h3>
                   <div className="quick-link-list">
-                    <p>Home</p>
-                    <p>Notice and Events</p>
-                    <p> Contact us</p>
-                    <p>Admission</p>
-                    <p>Login</p>
+                    <p>
+                      <Link to="/">Home</Link>
+                    </p>
+                    <p>
+                      <Link to="/notice">Notice and Events</Link>
+                    </p>
+                    <p>
+                      <Link to="/contact">Contact Us</Link>
+                    </p>
+                    <p>
+                      <Link to="/admission_form">Admission</Link>
+                    </p>
+                    <p>
+                      <Link to="/login">Login</Link>
+                    </p>
                   </div>
                 </div>
 
                 <div className="col-md-3">
                   <h3 className="link">Downloads</h3>
                   <div className="link-list">
-                    <p>Admission Form</p>
+                    <p>
+                      <Link to="/admission_form">Admission Form</Link>
+                    </p>
                     <p>Prospectus</p>
-                    <p>Annual Report</p>
+                    <p>
+                      <Link to="/report">Annual Report</Link>
+                    </p>
                   </div>
                 </div>
 

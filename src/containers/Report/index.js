@@ -4,7 +4,44 @@ import { Link } from "react-router-dom";
 import BannerImage from "../../images/banner-image.png";
 import { BsFillFilePdfFill } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
-const Report = () => {
+import gql from "graphql-tag";
+import Query from "../../components/Query";
+import Moment from "react-moment";
+import { useQuery } from "@apollo/react-hooks";
+const REPORT_DOWNLOAD = gql`
+  query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
+    downloads(first: $first, last: $last, after: $after, before: $before) {
+      edges {
+        cursor
+        node {
+          date
+          download {
+            report {
+              category
+              title
+              year
+              action {
+                mediaItemUrl
+              }
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+`;
+const updateQuery = (previousResult, { fetchMoreResult }) => {
+  return fetchMoreResult.events.edges.length ? fetchMoreResult : previousResult;
+};
+const ComponentPage = ({ error, loading, data, fetchMore }) => {
+  console.log(data);
+  const { downloads } = data;
   return (
     <>
       <div className="banner-image">
@@ -36,53 +73,7 @@ const Report = () => {
       </div>
 
       <Container>
-        <div className="notices">
-          <h1 className="notice-head">Report</h1>
-        </div>
-
-        <div className="report-search">
-          <div className="show-entries">
-            <p className="show">Show</p>
-            <div className="dropdown">
-              <button
-                className="btn btn-secondary dropdown-toggle show-button"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                5
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <Link to="#" className="dropdown-item">
-                  10
-                </Link>
-                <Link to="#" className="dropdown-item">
-                  15
-                </Link>
-                <Link to="#" className="dropdown-item">
-                  20
-                </Link>
-              </div>
-            </div>
-            <p className="entries">entries</p>
-          </div>
-          <div className="search-report">
-            <BiSearch className="fa-file-search" />
-            <input
-              type="text"
-              placeholder="Search.."
-              name="search"
-              className="search-placeholder"
-            />
-          </div>
-        </div>
-
-        <div className="report-table">
+        <div className="report-table mt-5 mb-3">
           <table className="table">
             <thead>
               <tr className="table-heading">
@@ -95,93 +86,117 @@ const Report = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="table-body">
-                <td>1</td>
-                <td>Strategic Plan for 2020-2025</td>
-                <td>Strategy</td>
-                <td>2020-2025</td>
-                <td>2022-03-15</td>
-                <td>
-                  <BsFillFilePdfFill className="fa-file-pdf" />
-                </td>
-              </tr>
-              <tr className="table-body">
-                <td>2</td>
-                <td>Strategic Plan for 2020-2025</td>
-                <td>Strategy</td>
-                <td>2020-2025</td>
-                <td>2022-03-15</td>
-                <td>
-                  <BsFillFilePdfFill className="fa-file-pdf" />
-                </td>
-              </tr>
-              <tr className="table-body">
-                <td>3</td>
-                <td>Strategic Plan for 2020-2025</td>
-                <td>Strategy</td>
-                <td>2020-2025</td>
-                <td>2022-03-15</td>
-                <td>
-                  <BsFillFilePdfFill className="fa-file-pdf" />
-                </td>
-              </tr>
-              <tr className="table-body">
-                <td>4</td>
-                <td>Strategic Plan for 2020-2025</td>
-                <td>Strategy</td>
-                <td>2020-2025</td>
-                <td>2022-03-15</td>
-                <td>
-                  <BsFillFilePdfFill className="fa-file-pdf" />
-                </td>
-              </tr>
-              <tr className="table-body">
-                <td>5</td>
-                <td>Strategic Plan for 2020-2025</td>
-                <td>Strategy</td>
-                <td>2020-2025</td>
-                <td>2022-03-15</td>
-                <td>
-                  <BsFillFilePdfFill className="fa-file-pdf" />
-                </td>
-              </tr>
+              {downloads.edges.map((a) => {
+                return (
+                  <>
+                    {a.node.download.report.map((b, index) => {
+                      return (
+                        <>
+                          <tr className="table-body">
+                            <td>{index + 1}</td>
+                            <td>{b.title}</td>
+                            <td>{b.category}</td>
+                            <td>{b.year}</td>
+                            <td>
+                              <Moment format="YYYY-MM-DD">{a.date}</Moment>
+                            </td>
+
+                            <td>
+                              <a href={b.action.mediaItemUrl} target="_blank">
+                                <BsFillFilePdfFill className="fa-file-pdf" />
+                              </a>
+                            </td>
+                          </tr>
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}
             </tbody>
           </table>
         </div>
-
-        <div className="fotter-table">
-          <p className="report">Show 1 to 5 entries</p>
-
-          <div className="notice-pagination">
+        {/* <div className="fotter-table">
+          <div className="event-pagination">
             <nav aria-label="Page navigation example">
               <ul className="pagination">
-                <li className="page-item">
-                  <Link to="#" className="page-link" aria-label="Previous">
-                    <span aria-hidden="true" className="page-previous">
-                      Previous
-                    </span>
-                    {/* <span className="sr-only">Previous</span> */}
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link to="#" className="page-link report-current_page">
-                    1
-                  </Link>
-                </li>
-                <li className="page-item">
-                  <Link to="#" className="page-link" aria-label="Next">
-                    <span aria-hidden="true" className="page-next">
-                      Next
-                    </span>
-                    {/* <span className="sr-only">Next</span> */}
-                  </Link>
-                </li>
+                {downloads.pageInfo.hasPreviousPage ? (
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      aria-label="Previous"
+                      onClick={() => {
+                        fetchMore({
+                          variables: {
+                            first: null,
+                            after: null,
+                            last: 1,
+                            before: downloads.pageInfo.startCursor || null,
+                          },
+                          updateQuery,
+                        });
+                      }}
+                    >
+                      <span className="sr-only">Previous</span>
+                    </button>
+                  </li>
+                ) : null}
+
+                {downloads.pageInfo.hasNextPage ? (
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      aria-label="Next"
+                      onClick={() => {
+                        fetchMore({
+                          variables: {
+                            first: 1,
+                            after: downloads.pageInfo.endCursor || null,
+                            last: null,
+                            before: null,
+                          },
+                          updateQuery,
+                        });
+                      }}
+                    >
+                      <span className="sr-only">Next</span>
+                    </button>
+                  </li>
+                ) : null}
               </ul>
             </nav>
           </div>
-        </div>
+        </div> */}
       </Container>
     </>
+  );
+};
+const Report = () => {
+  const variables = {
+    first: 1,
+    last: null,
+    after: null,
+    before: null,
+  };
+  const { data, error, loading, fetchMore } = useQuery(REPORT_DOWNLOAD, {
+    variables,
+  });
+
+  if (error) {
+    return <pre>{JSON.stringify(error)}</pre>;
+  }
+
+  if (loading) {
+    return null;
+  }
+
+  return (
+    <ComponentPage
+      error={error}
+      loading={loading}
+      data={data}
+      fetchMore={fetchMore}
+    />
   );
 };
 
