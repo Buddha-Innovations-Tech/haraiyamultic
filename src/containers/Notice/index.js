@@ -1,12 +1,12 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import NoticeBannerImage from "../../images/notice1.png";
-import NoticeImage from "../../images/notice.png";
-import gql from "graphql-tag";
-import Query from "../../components/Query";
-import Moment from "react-moment";
-import { useQuery } from "@apollo/react-hooks";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import NoticeBannerImage from '../../images/notice1.png';
+import NoticeImage from '../../images/notice.png';
+import gql from 'graphql-tag';
+import Query from '../../components/Query';
+import Moment from 'react-moment';
+import { useQuery } from '@apollo/react-hooks';
 
 const GET_NOTICE = gql`
   query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
@@ -44,25 +44,25 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
 
   return (
     <>
-      <div className="banner-image">
-        <img src={NoticeBannerImage} alt="" className="img-banner" />
-        <div className="overlay">
-          <div className="container">
-            <div className="alumini-banner-content">
-              <h1 className="alumini-heading">
+      <div className='banner-image'>
+        <img src={NoticeBannerImage} alt='' className='img-banner' />
+        <div className='overlay'>
+          <div className='container'>
+            <div className='alumini-banner-content'>
+              <h1 className='alumini-heading'>
                 We'd love to hear from <br />
                 you
               </h1>
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb contact-breadcrumb">
-                  <li className="breadcrumb-item">
-                    <Link to="/Home" className="breadcrumb-item1">
+              <nav aria-label='breadcrumb'>
+                <ol className='breadcrumb contact-breadcrumb'>
+                  <li className='breadcrumb-item'>
+                    <Link to='/Home' className='breadcrumb-item1'>
                       Home
                     </Link>
                   </li>
                   <li
-                    className="breadcrumb-item active breadcrumb-item2"
-                    aria-current="page"
+                    className='breadcrumb-item active breadcrumb-item2'
+                    aria-current='page'
                   >
                     Notice
                   </li>
@@ -74,45 +74,45 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
       </div>
 
       <Container>
-        <div className="notices">
-          <h1 className="notice-head">Notice</h1>
+        <div className='notices'>
+          <h1 className='notice-head'>Notice</h1>
         </div>
-        <div className="notice-list">
-          <div className="row gx-3 gy-5">
+        <div className='notice-list'>
+          <div className='row gx-3 gy-5'>
             {notices.edges.map((curElm, index) => {
               return (
-                <div className="col-md-3">
-                  <div className="card">
+                <div className='col-md-3'>
+                  <div className='card'>
                     <img
-                      className="card-img-top notice-img"
+                      className='card-img-top notice-img'
                       src={curElm.node.notice.noticeImage.mediaItemUrl}
-                      alt="Card image cap"
+                      alt='Card image cap'
                     />
-                    <div className="card-body">
-                      <div className="card_notice">
-                        <div className="notice_cllg_name">
+                    <div className='card-body'>
+                      <div className='card_notice'>
+                        <div className='notice_cllg_name'>
                           <p>Haraiya Multiple Campus</p>
                         </div>
 
-                        <div className="notice_date">
+                        <div className='notice_date'>
                           <p>
-                            <i className="fa-solid fa-calendar"></i>
-                            <Moment format="YYYY-MM-DD">
+                            <i className='fa-solid fa-calendar'></i>
+                            <Moment format='YYYY-MM-DD'>
                               {curElm.node.date}
                             </Moment>
                           </p>
                         </div>
                       </div>
-                      <h5 className="notice-title">{curElm.node.title}</h5>
+                      <h5 className='notice-title'>{curElm.node.title}</h5>
                       {/* <p className="notice-text">
                             Examination form fil up Notice for management
                             student of BBS Third Year 2078 .
                           </p> */}
-                      <div className="btn-notices">
+                      <div className='btn-notices'>
                         <Link
                           to={`/singlenotice/${curElm.node.slug}`}
-                          className="btn btn-primary btn-notice"
-                          role="button"
+                          className='btn btn-primary btn-notice'
+                          role='button'
                         >
                           Details
                         </Link>
@@ -125,14 +125,14 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
           </div>
         </div>
 
-        <div className="notice-pagination">
-          <nav aria-label="Page navigation example">
-            <ul className="pagination">
+        <div className='notice-pagination'>
+          <nav aria-label='Page navigation example'>
+            <ul className='pagination'>
               {notices.pageInfo.hasPreviousPage ? (
-                <li className="page-item">
+                <li className='page-item'>
                   <button
-                    className="page-link"
-                    aria-label="Previous"
+                    className='page-link'
+                    aria-label='Previous'
                     onClick={() => {
                       fetchMore({
                         variables: {
@@ -145,7 +145,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                       });
                     }}
                   >
-                    <span className="sr-only">Previous</span>
+                    <span className='sr-only'>Previous</span>
                   </button>
                 </li>
               ) : null}
@@ -165,10 +165,10 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                     </Link>
                   </li> */}
               {notices.pageInfo.hasNextPage ? (
-                <li className="page-item">
+                <li className='page-item'>
                   <button
-                    className="page-link"
-                    aria-label="Next"
+                    className='page-link'
+                    aria-label='Next'
                     onClick={() => {
                       fetchMore({
                         variables: {
@@ -181,7 +181,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                       });
                     }}
                   >
-                    <span className="sr-only">Next</span>
+                    <span className='sr-only'>Next</span>
                   </button>
                 </li>
               ) : null}
@@ -194,7 +194,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
 };
 const Notice = () => {
   const variables = {
-    first: 1,
+    first: 10,
     last: null,
     after: null,
     before: null,
