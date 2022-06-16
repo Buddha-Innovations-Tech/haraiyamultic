@@ -16,8 +16,13 @@ import { GrMail } from "react-icons/gr";
 import { RiLoginBoxFill } from "react-icons/ri";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
-const NavBar = () => {
-  const AuthToken = !localStorage.getItem("user");
+import { useState } from "react";
+import { useEffect } from "react";
+const NavBar = ({isLoggedIn,setIsLoggedIn}) => {
+  const [AuthToken, setAuthToken] = useState(null);
+
+  const [local, setLocal] = useState(null);
+
   const GET_ACADEMIC = gql`
     query NewQuery {
       academics {
@@ -28,6 +33,35 @@ const NavBar = () => {
       }
     }
   `;
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const logOutUser = () => {
+      localStorage.clear();
+      setIsLoggedIn(false)
+    }
+  useEffect(() => {
+   const items = localStorage.getItem('user');
+   if(items){
+    setIsLoggedIn(true)
+   }else(
+    setIsLoggedIn(false)
+   )
+  }, []);
+  useEffect(() => {
+   const items = localStorage.getItem('user');
+   if(items){
+    setIsLoggedIn(true)
+   }else(
+    setIsLoggedIn(false)
+   )
+  }, [isLoggedIn]);
+  useEffect(()=> {
+    window.addEventListener('storage', () => {
+    
+     console.log('storage changed');
+    });
+  },[])
+ 
 
   return (
     <>
@@ -52,7 +86,7 @@ const NavBar = () => {
                     <span className="student-zone">Student Zone</span>
                   </Link>
                 </div>
-                {AuthToken ? (
+                {!isLoggedIn ? (
                   <div className="login">
                     <Link
                       to="/login"
@@ -67,6 +101,7 @@ const NavBar = () => {
                     <Link
                       to=""
                       style={{ color: "#fff", textDecoration: "none" }}
+                      onClick={logOutUser}
                     >
                       <span className="top-login">LogOut</span>
                     </Link>

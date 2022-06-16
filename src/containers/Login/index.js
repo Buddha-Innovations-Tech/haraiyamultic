@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import gql from "graphql-tag";
-import { useMutation } from "@apollo/react-hooks";
-const Login = () => {
+
+const Login = ({isLoggedIn,setIsLoggedIn}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -21,15 +20,18 @@ const Login = () => {
     await axios
       .post("/api/users/signin", { email, password }, config)
       .then((res) => {
-        console.log(res);
+        
         if (res.data.token) {
           console.log(res.data.token);
           localStorage.setItem("user", res.data.token);
+          localStorage.setItem("isAdmin", res.data.isAdmin);
+
         }
         navigate("/");
+        setIsLoggedIn(true)
       })
       .catch((err) => setError(err.response.data.message));
-    // navigate("/");
+   
     setPassword("");
     setEmail("");
   };

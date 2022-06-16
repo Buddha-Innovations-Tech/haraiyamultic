@@ -125,7 +125,7 @@ const Message = () => {
                                     <h1 className="chief-name">{b.name}</h1>
                                     <p className="chief-position">{b.post}</p>
                                   </div>
-                                  <div className="col-md-9 nthselectorcss">
+                                  <div className="col-md-9 leftspacing">
                                     <p
                                       className="campus-paragraph"
                                       dangerouslySetInnerHTML={{

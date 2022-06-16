@@ -738,7 +738,7 @@ const Admission_Form = (e) => {
                         </td>
                         <td style={{ width: "200px" }}>
                           <input
-                            type="text"
+                            type="number"
                             style={{
                               border: "none",
                               outline: "none",
@@ -750,7 +750,7 @@ const Admission_Form = (e) => {
                         </td>
                         <td style={{ width: "200px" }}>
                           <input
-                            type="text"
+                            type="number"
                             style={{
                               border: "none",
                               outline: "none",
@@ -762,7 +762,7 @@ const Admission_Form = (e) => {
                         </td>
                         <td style={{ width: "200px" }}>
                           <input
-                            type="text"
+                            type="number"
                             style={{
                               border: "none",
                               outline: "none",

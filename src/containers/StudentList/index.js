@@ -1,18 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const StudentList = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
   const getAllUsers = async () => {
     await axios.get(`/api/users`).then((res) => {
-      console.log(res);
       setUsers(res.data.users);
     });
   };
+
+
   useEffect(() => {
-    getAllUsers();
+   
+    if (localStorage.getItem("isAdmin") === "false") {
+      navigate("/");
+    }else{
+      getAllUsers();
+    }
+   
   }, []);
 
   return (

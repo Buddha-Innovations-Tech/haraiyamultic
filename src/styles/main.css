@@ -1755,7 +1755,7 @@ section[role="navDrop"] .show > .btn-success.dropdown-toggle {
   font-size: 24px;
   line-height: 32px;
   color: #026baf;
-  margin-bottom: 0px;
+  margin-bottom: 40px;
 }
 
 .non-teaching {
@@ -1852,7 +1852,13 @@ section[role="navDrop"] .show > .btn-success.dropdown-toggle {
   margin-top: 54px;
   margin-bottom: 40px;
 }
-
+.message-campuschief:nth-child(even)  .nthselectorcss {
+  /* background-color: #026baf; */
+  order: 2;
+}
+.message-campuschief:nth-child(even)  .leftspacing .campus-paragraph{
+  margin-left: 0;
+}
 .message-campuschief .img-campuschief {
   width: 286px;
   height: 284px;
@@ -2924,9 +2930,9 @@ body {
   padding: 5px 0;
   background-color: #026baf;
 }
-.message-campuschief:nth-child(odd) .nthselectorcss  {
+/* .message-campuschief:nth-child(odd) .nthselectorcss  {
   order: 2;
-}
+} */
 .fixedtopnavbar{
   position: sticky;
   top: 0;

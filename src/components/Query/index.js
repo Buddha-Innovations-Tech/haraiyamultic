@@ -5,7 +5,7 @@ const Query = ({ children, query, id }) => {
   const { data, loading, error } = useQuery(query, {
     variables: { id: id },
   });
-  console.log(data, loading, error);
+  // console.log(data, loading, error);
 
   if (loading) return <p></p>;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;

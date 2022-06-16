@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 //components
@@ -42,10 +42,12 @@ import StudentDetails from "../StudentDetails";
 const App = () => {
   // axios.defaults.baseURL = "https://student-forms.herokuapp.com/";
   axios.defaults.baseURL = "http://localhost:5000/";
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       {/* <MiniNavbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -72,7 +74,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/student_zone" element={<StudentZone />} />
         <Route path="/admission_form" element={<AdmissionForm />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}  />
         <Route path="/register" element={<Register />} />
         <Route path="/studentlist" element={<StudentList />} />
         <Route path="/studentdetails/:id" element={<StudentDetails />} />
