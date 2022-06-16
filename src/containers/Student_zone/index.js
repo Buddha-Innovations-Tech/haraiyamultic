@@ -184,7 +184,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
 };
 const StudentZone = () => {
   const variables = {
-    first: 1,
+    first: 10,
     last: null,
     after: null,
     before: null,
