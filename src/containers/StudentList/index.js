@@ -56,7 +56,7 @@ const StudentList = () => {
                           >
                             Details
                           </Link>{" "}
-                          <Link
+                          {/* <Link
                             to=""
                             style={{
                               color: "red",
@@ -65,7 +65,7 @@ const StudentList = () => {
                             }}
                           >
                             Delete
-                          </Link>
+                          </Link> */}
                         </td>
                       </tr>
                     </>

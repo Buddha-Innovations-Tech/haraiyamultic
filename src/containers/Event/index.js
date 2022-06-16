@@ -43,7 +43,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
 };
 
 const ComponentPage = ({ error, loading, data, fetchMore }) => {
-  console.log(data);
+  // console.log(data);
   const [filterTerm, setFilterTerm] = useState("All Events");
   const { events } = data;
   return (

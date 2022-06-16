@@ -2952,7 +2952,10 @@ body {
 .notice_card {
   width: 100%;
 }
-
+.placeholder{
+  height: 600px !important;
+  
+}
 /* feature News */
 /* testomonial */
 /* footer */

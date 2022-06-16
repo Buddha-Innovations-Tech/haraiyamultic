@@ -192,6 +192,33 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
     </>
   );
 };
-const Notice = () => {};
+const Notice = () => {
+  const variables = {
+    first: 1,
+    last: null,
+    after: null,
+    before: null,
+  };
+  const { data, error, loading, fetchMore } = useQuery(GET_NOTICE, {
+    variables,
+  });
+
+  if (error) {
+    return <pre>{JSON.stringify(error)}</pre>;
+  }
+
+  if (loading) {
+    return null;
+  }
+
+  return (
+    <ComponentPage
+      error={error}
+      loading={loading}
+      data={data}
+      fetchMore={fetchMore}
+    />
+  );
+};
 
 export default Notice;
