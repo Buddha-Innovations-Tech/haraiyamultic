@@ -6,8 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 const StudentList = () => {
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
+  const tokenAuth = localStorage.getItem("user");
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${tokenAuth}`,
+    },
+  };
   const getAllUsers = async () => {
-    await axios.get(`/api/users`).then((res) => {
+    await axios.get(`/api/forms/`,config).then((res) => {
+      console.log(res);
       setUsers(res.data.users);
     });
   };
@@ -44,9 +53,9 @@ const StudentList = () => {
                     <>
                       <tr>
                         <td>{index + 1}</td>
-                        <td>{a.name}</td>
+                        <td>{a.user.name}</td>
                         {/* <td>9847236589</td> */}
-                        <td>{a.email}</td>
+                        <td>{a.user.email}</td>
                         <td>
                           <Link
                             to={`/studentdetails/${a._id}`}

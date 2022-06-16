@@ -86,7 +86,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
         <div className="events-list">
           <div className="row gx-3 gy-5">
             {events.edges
-              ?.filter((i) => i.node.events.eventtype === "Student Zone")
+              ?.filter((i) => i.node.events.eventtype.toString() === "Student Zone")
               .map((a) => {
                 return (
                   <div className="col-md-4">

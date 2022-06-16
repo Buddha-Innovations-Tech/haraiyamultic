@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: `https://hmc.edu.np/admin-har/graphql`,
+  uri: `https://harayia2.local/wp-admin/graphql`,
 });
 const client = new ApolloClient({
   cache,
