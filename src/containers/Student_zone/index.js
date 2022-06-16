@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import NoticeBannerImage from "../../images/notice1.png";
-import EventImage from "../../images/event-image.png";
-import gql from "graphql-tag";
-import Query from "../../components/Query";
-import Moment from "react-moment";
-import { useQuery } from "@apollo/react-hooks";
+import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import NoticeBannerImage from '../../images/notice1.png';
+import EventImage from '../../images/event-image.png';
+import gql from 'graphql-tag';
+import Query from '../../components/Query';
+import Moment from 'react-moment';
+import { useQuery } from '@apollo/react-hooks';
 
 const GET_EVENTS = gql`
   query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
@@ -43,30 +43,29 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
   return fetchMoreResult.events.edges.length ? fetchMoreResult : previousResult;
 };
 const ComponentPage = ({ error, loading, data, fetchMore }) => {
-  console.log(data);
-  const [filterTerm, setFilterTerm] = useState("All Events");
+  const [filterTerm, setFilterTerm] = useState('All Events');
   const { events } = data;
   return (
     <>
-      <div className="banner-image">
-        <img src={NoticeBannerImage} alt="" className="img-banner" />
-        <div className="overlay">
+      <div className='banner-image'>
+        <img src={NoticeBannerImage} alt='' className='img-banner' />
+        <div className='overlay'>
           <Container>
-            <div className="alumini-banner-content">
-              <h1 className="alumini-heading">
+            <div className='alumini-banner-content'>
+              <h1 className='alumini-heading'>
                 We'd love to hear from <br />
                 you
               </h1>
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb contact-breadcrumb">
-                  <li className="breadcrumb-item">
-                    <Link to="/Home" className="breadcrumb-item1">
+              <nav aria-label='breadcrumb'>
+                <ol className='breadcrumb contact-breadcrumb'>
+                  <li className='breadcrumb-item'>
+                    <Link to='/Home' className='breadcrumb-item1'>
                       Home
                     </Link>
                   </li>
                   <li
-                    className="breadcrumb-item active breadcrumb-item2"
-                    aria-current="page"
+                    className='breadcrumb-item active breadcrumb-item2'
+                    aria-current='page'
                   >
                     Event
                   </li>
@@ -78,43 +77,45 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
       </div>
 
       <Container>
-        <div className="notices">
-          <div className="event">
-            <h1 className="notice-head">Events</h1>
+        <div className='notices'>
+          <div className='event'>
+            <h1 className='notice-head'>Events</h1>
           </div>
         </div>
-        <div className="events-list">
-          <div className="row gx-3 gy-5">
+        <div className='events-list'>
+          <div className='row gx-3 gy-5'>
             {events.edges
-              ?.filter((i) => i.node.events.eventtype === "Student Zone")
+              ?.filter(
+                (i) => i.node.events.eventtype.toString() === 'Student Zone'
+              )
               .map((a) => {
                 return (
-                  <div className="col-md-4">
-                    <div className="card">
+                  <div className='col-md-4'>
+                    <div className='card'>
                       <img
-                        className="card-img-top event-img"
+                        className='card-img-top event-img'
                         src={a.node.events.featuredimage.sourceUrl}
-                        alt="Card image cap"
+                        alt='Card image cap'
                       />
-                      <div className="event-body">
-                        <p className="notice-title">{a.node.events.title}</p>
+                      <div className='event-body'>
+                        <p className='notice-title'>{a.node.events.title}</p>
                         <p
-                          className="notice-text"
+                          className='notice-text'
                           dangerouslySetInnerHTML={{
                             __html: a.node.events.description,
                           }}
                         />
 
-                        <div className="btn-event">
-                          <div className="date">
+                        <div className='btn-event'>
+                          <div className='date'>
                             <p>
-                              <Moment format="YYYY-MM-DD">{a.node.date}</Moment>
+                              <Moment format='YYYY-MM-DD'>{a.node.date}</Moment>
                             </p>
                           </div>
                           <div>
                             <Link
                               to={`/event_description/${a.node.slug}`}
-                              className="event-link"
+                              className='event-link'
                             >
                               Read More
                             </Link>
@@ -128,14 +129,14 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
           </div>
         </div>
 
-        <div className="event-pagination">
-          <nav aria-label="Page navigation example">
-            <ul className="pagination">
+        <div className='event-pagination'>
+          <nav aria-label='Page navigation example'>
+            <ul className='pagination'>
               {events.pageInfo.hasPreviousPage ? (
-                <li className="page-item">
+                <li className='page-item'>
                   <button
-                    className="page-link"
-                    aria-label="Previous"
+                    className='page-link'
+                    aria-label='Previous'
                     onClick={() => {
                       fetchMore({
                         variables: {
@@ -148,16 +149,16 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                       });
                     }}
                   >
-                    <span className="sr-only">Previous</span>
+                    <span className='sr-only'>Previous</span>
                   </button>
                 </li>
               ) : null}
 
               {events.pageInfo.hasNextPage ? (
-                <li className="page-item">
+                <li className='page-item'>
                   <button
-                    className="page-link"
-                    aria-label="Next"
+                    className='page-link'
+                    aria-label='Next'
                     onClick={() => {
                       fetchMore({
                         variables: {
@@ -170,7 +171,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                       });
                     }}
                   >
-                    <span className="sr-only">Next</span>
+                    <span className='sr-only'>Next</span>
                   </button>
                 </li>
               ) : null}
