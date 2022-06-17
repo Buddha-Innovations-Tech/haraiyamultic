@@ -1080,6 +1080,10 @@ margin: 20px auto 5px;
     width: 100%;
     margin: 0 auto;
 }
+.list_testomonial .carousel {
+  margin: 0 auto!important;
+  width: 100% !important;
+}
   .middle-name,.first-name{
     margin-bottom: 20px;
   }

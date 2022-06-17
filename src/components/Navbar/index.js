@@ -408,16 +408,30 @@ const NavBar = ({isLoggedIn,setIsLoggedIn}) => {
                          Academic
                        </Link>
                        <div
-                         className="dropdown-menu dropdown-list"
-                         aria-labelledby="navbarDropdown"
-                       >
-                         <Link to="/bbs" className="dropdown-item intro">
-                           BBS
-                         </Link>
-                         <Link to="/bed" className="dropdown-item intro">
-                           B.Ed
-                         </Link>
-                       </div>
+                    className="dropdown-menu dropdown-list"
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <Query query={GET_ACADEMIC}>
+                      {({ data: { academics } }) => {
+                        return (
+                          <>
+                            {academics.nodes?.map((a) => {
+                              return (
+                                <>
+                                  <Link
+                                    to={`academics/${a.slug}`}
+                                    className="dropdown-item intro"
+                                  >
+                                    {a.title}
+                                  </Link>
+                                </>
+                              );
+                            })}
+                          </>
+                        );
+                      }}
+                    </Query>
+                  </div>
                      </li>
 
                      <li className="nav-item dropdown">

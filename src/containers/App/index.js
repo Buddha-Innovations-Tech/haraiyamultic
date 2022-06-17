@@ -38,6 +38,7 @@ import Register from '../Register';
 import axios from 'axios';
 import StudentList from '../StudentList';
 import StudentDetails from '../StudentDetails';
+import ScrollToTop from '../../components/ScrollToTop';
 
 const App = () => {
   // axios.defaults.baseURL = "https://student-forms.herokuapp.com/";
@@ -46,6 +47,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       {/* <MiniNavbar /> */}
       <Routes>
