@@ -31,7 +31,11 @@ const StudentDetails = () => {
         <Container>
           <div className="d-flex">
             <div className="studentprofile">
-              <img src={users.image} alt="" />
+             <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.image}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
             </div>
             <div className="studentname">
               <h2>
