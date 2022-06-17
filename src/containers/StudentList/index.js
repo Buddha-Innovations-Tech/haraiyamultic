@@ -58,7 +58,7 @@ const StudentList = () => {
                         <td>{a.user.email}</td>
                         <td>
                           <Link
-                            to={`/studentdetails/${a._id}`}
+                            to={`/studentdetails/${a.user._id}`}
                             style={{
                               textDecoration: "none",
                             }}

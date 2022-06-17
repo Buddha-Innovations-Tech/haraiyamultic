@@ -9,7 +9,7 @@ const Admission_Form = (e) => {
 
   const [filterTerm, setFilterTerm] = useState();
   const [filterTermSpeci, setFilterTermSpeci] = useState();
-  const [personImage, setPersonImage] = useState();
+  const [personImage, setPersonImage] = useState(null);
   const [pfirstName, setPFirstName] = useState("");
   const [pmiddleName, setPMiddleName] = useState("");
   const [plastName, setPLastName] = useState("");
@@ -286,11 +286,11 @@ const Admission_Form = (e) => {
                   </div>
                 </div>
                 <div className="second-div-form-content">
-                  <img
-                    src={`http://localhost:5000${personImage}`}
+                 {personImage && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${personImage}`}
                     alt=""
                     className="form-image"
-                  />
+                  /> }
                   <input
                     type="file"
                     className="form-control"
@@ -926,6 +926,11 @@ const Admission_Form = (e) => {
                       <h1 className="doucment-head">SLC/SEE Document</h1>
                       <div className="custom-file document-file">
                         <p className="document-list">SLC Marksheet</p>
+                        {slcMarksheet && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${slcMarksheet}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -936,6 +941,11 @@ const Admission_Form = (e) => {
 
                       <div className="custom-file document-file">
                         <p className="document-list">Character Certificate</p>
+                        {slcCharacter && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${slcCharacter}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -946,6 +956,11 @@ const Admission_Form = (e) => {
 
                       <div className="custom-file document-file">
                         <p className="document-list">Transfer Certificate</p>
+                        {slcTransfer && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${slcTransfer}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -958,6 +973,11 @@ const Admission_Form = (e) => {
                       <h1 className="doucment-head">+2 Marksheet</h1>
                       <div className="custom-file document-file">
                         <p className="document-list">+2 Marksheet</p>
+                        {plustwoMarksheet && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${plustwoMarksheet}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -967,6 +987,11 @@ const Admission_Form = (e) => {
                       </div>
                       <div className="custom-file document-file">
                         <p className="document-list">Character Certificate</p>
+                        {plustwoCharacter && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${plustwoCharacter}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -976,6 +1001,11 @@ const Admission_Form = (e) => {
                       </div>
                       <div className="custom-file document-file">
                         <p className="document-list">Transfer Certificate</p>
+                        {plustwoTransfer && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${plustwoTransfer}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"
@@ -985,6 +1015,11 @@ const Admission_Form = (e) => {
                       </div>
                       <div className="custom-file document-file">
                         <p className="document-list">Provision Certificate</p>
+                        {plustwoProvision && <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${plustwoProvision}`}
+                    alt=""
+                    className="form-image"
+                  /> }
                         <input
                           type="file"
                           className="custom-file-input document-store"

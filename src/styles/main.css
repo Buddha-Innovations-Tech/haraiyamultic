@@ -874,7 +874,14 @@ margin: 20px auto 5px;
 }
 
 .navbar-small {
+
   display: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .carousel {
@@ -898,15 +905,33 @@ margin: 20px auto 5px;
   .navbar-large {
     display: none !important;
   }
+  .offcanvas-end{
+    z-index: 99999 !important;
+  }
   .navbar-small {
+  
     display: block !important;
+    /* position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: -1px -1px 10px 0px rgb(0 0 0 / 75%);
+    -webkit-box-shadow: -1px -1px 10px 0px rgb(0 0 0 / 75%);
+    -moz-box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.75); */
+
   }
 }
 
 @media only screen and (max-width: 768px) {
   .offcanvas-end {
+   z-index: 99999 !important;
     width: 100% !important;
   }
+  
+  /* .offcanvas-header{
+    margin-top: 60px !important;
+  } */
   .first-div-form{
     display: block !important;
   }
@@ -1051,6 +1076,10 @@ margin: 20px auto 5px;
   }
 }
 @media only screen and (max-width: 425px){
+  .login-page {
+    width: 100%;
+    margin: 0 auto;
+}
   .middle-name,.first-name{
     margin-bottom: 20px;
   }
@@ -2955,6 +2984,11 @@ body {
 .placeholder{
   height: 600px !important;
   
+}
+.form-image{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
 }
 /* feature News */
 /* testomonial */

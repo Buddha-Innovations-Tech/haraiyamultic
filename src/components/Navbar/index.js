@@ -316,207 +316,210 @@ const NavBar = ({isLoggedIn,setIsLoggedIn}) => {
             </div>
           </Container>
         </nav>
+        <>
+     
+     {[false].map((expand) => (
+       <Navbar
+         key={expand}
+         bg="light"
+         expand={expand}
+         className=" navbar-small "
+       >
+         <Container fluid>
+           <Navbar.Brand href="/">
+             <img src={HaraiyaLogo} alt="logo" class="logo-image" />
+           </Navbar.Brand>
+           <Navbar.Toggle
+             aria-controls={`offcanvasNavbar-expand-${expand}`}
+           />
+           <Navbar.Offcanvas
+             id={`offcanvasNavbar-expand-${expand}`}
+             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+             placement="end"
+           >
+             <Offcanvas.Header closeButton>
+               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                 <Link to="/" className="navbar-brand">
+                   <img src={HaraiyaLogo} alt="logo" class="logo-image" />
+                 </Link>
+               </Offcanvas.Title>
+             </Offcanvas.Header>
+             <Offcanvas.Body>
+               <Nav className="justify-content-end flex-grow-1 pe-3">
+                 <div>
+                   <ul className="navbar-nav ms-auto navbar-small-css">
+                     <li className="nav-item active">
+                       <Link to="/" className="nav-link navbar-list">
+                         Home
+                       </Link>
+                       {/* <Link to="/">Home</Link> */}
+                     </li>
+
+                     <li className="nav-item dropdown">
+                       <Link
+                         to="#"
+                         className="nav-link dropdown-toggle navbar-list"
+                         id="navbarDropdown"
+                         role="button"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                       >
+                         About
+                       </Link>
+                       <div
+                         className="dropdown-menu dropdown-intro"
+                         aria-labelledby="navbarDropdown"
+                       >
+                         <Link to="/about" className="dropdown-item intro">
+                           Introduction
+                         </Link>
+
+                         <Link to="/message" className="dropdown-item intro">
+                           Message
+                         </Link>
+
+                         <Link
+                           to="/managment_commitee"
+                           className="dropdown-item intro"
+                         >
+                           Managment Commitee
+                         </Link>
+
+                         <Link to="/team" className="dropdown-item intro">
+                           Team
+                         </Link>
+
+                         <Link to="/cells" className="dropdown-item intro">
+                           Cells
+                         </Link>
+                       </div>
+                     </li>
+                     <li className="nav-item dropdown">
+                       <Link
+                         to="#"
+                         className="nav-link dropdown-toggle navbar-list"
+                         id="navbarDropdown"
+                         role="button"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                       >
+                         Academic
+                       </Link>
+                       <div
+                         className="dropdown-menu dropdown-list"
+                         aria-labelledby="navbarDropdown"
+                       >
+                         <Link to="/bbs" className="dropdown-item intro">
+                           BBS
+                         </Link>
+                         <Link to="/bed" className="dropdown-item intro">
+                           B.Ed
+                         </Link>
+                       </div>
+                     </li>
+
+                     <li className="nav-item dropdown">
+                       <Link
+                         to="#"
+                         className="nav-link dropdown-toggle navbar-list"
+                         id="navbarDropdown"
+                         role="button"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                       >
+                         Download
+                       </Link>
+                       <div
+                         className="dropdown-menu dropdown-list"
+                         aria-labelledby="navbarDropdown"
+                       >
+                         <Link to="/report" className="dropdown-item intro">
+                           Report
+                         </Link>
+                         <Link
+                           to="/syllabus"
+                           className="dropdown-item intro"
+                         >
+                           Syllabus
+                         </Link>
+                       </div>
+                     </li>
+                     <li className="nav-item dropdown">
+                       <Link
+                         to="#"
+                         className="nav-link dropdown-toggle navbar-list"
+                         id="navbarDropdown"
+                         role="button"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                       >
+                         Gallery
+                       </Link>
+                       <div
+                         className="dropdown-menu dropdown-list"
+                         aria-labelledby="navbarDropdown"
+                       >
+                         <Link to="/photos" className="dropdown-item intro">
+                           Photos
+                         </Link>
+                         <Link to="/videos" className="dropdown-item intro">
+                           Videos
+                         </Link>
+                       </div>
+                     </li>
+                     <li className="nav-item dropdown">
+                       <Link
+                         to="#"
+                         className="nav-link dropdown-toggle navbar-list"
+                         id="navbarDropdown"
+                         role="button"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false"
+                       >
+                         Notice
+                       </Link>
+                       <div
+                         className="dropdown-menu dropdown-list"
+                         aria-labelledby="navbarDropdown"
+                       >
+                         <Link to="/notice" className="dropdown-item intro">
+                           Notice
+                         </Link>
+                         <Link to="/event" className="dropdown-item intro">
+                           Event
+                         </Link>
+                       </div>
+                     </li>
+                     <li className="nav-item">
+                       <Link to="/alumini" className="nav-link nav-list2">
+                         Alumini
+                       </Link>
+                     </li>
+                     <li className="nav-item">
+                       <Link
+                         to="/contact"
+                         className="nav-link nav-contact nav-list2"
+                       >
+                         Contact
+                       </Link>
+                     </li>
+                   </ul>
+                 </div>
+               </Nav>
+             </Offcanvas.Body>
+           </Navbar.Offcanvas>
+         </Container>
+       </Navbar>
+     ))}
+  
+   </>
       </div>
-      <>
-        {[false].map((expand) => (
-          <Navbar
-            key={expand}
-            bg="light"
-            expand={expand}
-            className=" navbar-small"
-          >
-            <Container fluid>
-              <Navbar.Brand href="/">
-                <img src={HaraiyaLogo} alt="logo" class="logo-image" />
-              </Navbar.Brand>
-              <Navbar.Toggle
-                aria-controls={`offcanvasNavbar-expand-${expand}`}
-              />
-              <Navbar.Offcanvas
-                id={`offcanvasNavbar-expand-${expand}`}
-                aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                placement="end"
-              >
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    <Link to="/" className="navbar-brand">
-                      <img src={HaraiyaLogo} alt="logo" class="logo-image" />
-                    </Link>
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <div>
-                      <ul className="navbar-nav ms-auto navbar-small-css">
-                        <li className="nav-item active">
-                          <Link to="/" className="nav-link navbar-list">
-                            Home
-                          </Link>
-                          {/* <Link to="/">Home</Link> */}
-                        </li>
-
-                        <li className="nav-item dropdown">
-                          <Link
-                            to="#"
-                            className="nav-link dropdown-toggle navbar-list"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            About
-                          </Link>
-                          <div
-                            className="dropdown-menu dropdown-intro"
-                            aria-labelledby="navbarDropdown"
-                          >
-                            <Link to="/about" className="dropdown-item intro">
-                              Introduction
-                            </Link>
-
-                            <Link to="/message" className="dropdown-item intro">
-                              Message
-                            </Link>
-
-                            <Link
-                              to="/managment_commitee"
-                              className="dropdown-item intro"
-                            >
-                              Managment Commitee
-                            </Link>
-
-                            <Link to="/team" className="dropdown-item intro">
-                              Team
-                            </Link>
-
-                            <Link to="/cells" className="dropdown-item intro">
-                              Cells
-                            </Link>
-                          </div>
-                        </li>
-                        <li className="nav-item dropdown">
-                          <Link
-                            to="#"
-                            className="nav-link dropdown-toggle navbar-list"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Academic
-                          </Link>
-                          <div
-                            className="dropdown-menu dropdown-list"
-                            aria-labelledby="navbarDropdown"
-                          >
-                            <Link to="/bbs" className="dropdown-item intro">
-                              BBS
-                            </Link>
-                            <Link to="/bed" className="dropdown-item intro">
-                              B.Ed
-                            </Link>
-                          </div>
-                        </li>
-
-                        <li className="nav-item dropdown">
-                          <Link
-                            to="#"
-                            className="nav-link dropdown-toggle navbar-list"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Download
-                          </Link>
-                          <div
-                            className="dropdown-menu dropdown-list"
-                            aria-labelledby="navbarDropdown"
-                          >
-                            <Link to="/report" className="dropdown-item intro">
-                              Report
-                            </Link>
-                            <Link
-                              to="/syllabus"
-                              className="dropdown-item intro"
-                            >
-                              Syllabus
-                            </Link>
-                          </div>
-                        </li>
-                        <li className="nav-item dropdown">
-                          <Link
-                            to="#"
-                            className="nav-link dropdown-toggle navbar-list"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Gallery
-                          </Link>
-                          <div
-                            className="dropdown-menu dropdown-list"
-                            aria-labelledby="navbarDropdown"
-                          >
-                            <Link to="/photos" className="dropdown-item intro">
-                              Photos
-                            </Link>
-                            <Link to="/videos" className="dropdown-item intro">
-                              Videos
-                            </Link>
-                          </div>
-                        </li>
-                        <li className="nav-item dropdown">
-                          <Link
-                            to="#"
-                            className="nav-link dropdown-toggle navbar-list"
-                            id="navbarDropdown"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            Notice
-                          </Link>
-                          <div
-                            className="dropdown-menu dropdown-list"
-                            aria-labelledby="navbarDropdown"
-                          >
-                            <Link to="/notice" className="dropdown-item intro">
-                              Notice
-                            </Link>
-                            <Link to="/event" className="dropdown-item intro">
-                              Event
-                            </Link>
-                          </div>
-                        </li>
-                        <li className="nav-item">
-                          <Link to="/alumini" className="nav-link nav-list2">
-                            Alumini
-                          </Link>
-                        </li>
-                        <li className="nav-item">
-                          <Link
-                            to="/contact"
-                            className="nav-link nav-contact nav-list2"
-                          >
-                            Contact
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </Nav>
-                </Offcanvas.Body>
-              </Navbar.Offcanvas>
-            </Container>
-          </Navbar>
-        ))}
-      </>
+     
     </>
   );
 };
