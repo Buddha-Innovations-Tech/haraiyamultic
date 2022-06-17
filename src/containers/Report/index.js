@@ -1,13 +1,13 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import BannerImage from "../../images/banner-image.png";
-import { BsFillFilePdfFill } from "react-icons/bs";
-import { BiSearch } from "react-icons/bi";
-import gql from "graphql-tag";
-import Query from "../../components/Query";
-import Moment from "react-moment";
-import { useQuery } from "@apollo/react-hooks";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import BannerImage from '../../images/banner-image.png';
+import { BsFillFilePdfFill } from 'react-icons/bs';
+import { BiSearch } from 'react-icons/bi';
+import gql from 'graphql-tag';
+import Query from '../../components/Query';
+import Moment from 'react-moment';
+import { useQuery } from '@apollo/react-hooks';
 const REPORT_DOWNLOAD = gql`
   query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
     downloads(first: $first, last: $last, after: $after, before: $before) {
@@ -44,24 +44,24 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
   const { downloads } = data;
   return (
     <>
-      <div className="banner-image">
-        <img src={BannerImage} alt="" className="img-banner" />
-        <div className="overlay">
-          <div className="container">
-            <div className="alumini-banner-content">
-              <h1 className="alumini-heading">
+      <div className='banner-image'>
+        <img src={BannerImage} alt='' className='img-banner' />
+        <div className='overlay'>
+          <div className='container'>
+            <div className='alumini-banner-content'>
+              <h1 className='alumini-heading'>
                 BBS (Bachelor of Business <br /> Studies)
               </h1>
-              <nav aria-label="breadcrumb">
-                <ol className="breadcrumb contact-breadcrumb">
-                  <li className="breadcrumb-item">
-                    <Link to="/Home" className="breadcrumb-item1">
+              <nav aria-label='breadcrumb'>
+                <ol className='breadcrumb contact-breadcrumb'>
+                  <li className='breadcrumb-item'>
+                    <Link to='/Home' className='breadcrumb-item1'>
                       Home
                     </Link>
                   </li>
                   <li
-                    className="breadcrumb-item active breadcrumb-item2"
-                    aria-current="page"
+                    className='breadcrumb-item active breadcrumb-item2'
+                    aria-current='page'
                   >
                     Report
                   </li>
@@ -73,16 +73,16 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
       </div>
 
       <Container>
-        <div className="report-table mt-5 mb-3">
-          <table className="table">
+        <div className='report-table mt-5 mb-3'>
+          <table className='table'>
             <thead>
-              <tr className="table-heading">
-                <th scope="col">S.N</th>
-                <th scope="col">Title</th>
-                <th scope="col">Category</th>
-                <th scope="col">Year</th>
-                <th scope="col">Created at</th>
-                <th scope="col">Action</th>
+              <tr className='table-heading'>
+                <th scope='col'>S.N</th>
+                <th scope='col'>Title</th>
+                <th scope='col'>Category</th>
+                <th scope='col'>Year</th>
+                <th scope='col'>Created at</th>
+                <th scope='col'>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -92,18 +92,18 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
                     {a.node.download.report.map((b, index) => {
                       return (
                         <>
-                          <tr className="table-body">
+                          <tr className='table-body'>
                             <td>{index + 1}</td>
                             <td>{b.title}</td>
                             <td>{b.category}</td>
                             <td>{b.year}</td>
                             <td>
-                              <Moment format="YYYY-MM-DD">{a.date}</Moment>
+                              <Moment format='YYYY-MM-DD'>{a.date}</Moment>
                             </td>
 
                             <td>
-                              <a href={b.action.mediaItemUrl} target="_blank">
-                                <BsFillFilePdfFill className="fa-file-pdf" />
+                              <a href={b.action.mediaItemUrl} target='_blank'>
+                                <BsFillFilePdfFill className='fa-file-pdf' />
                               </a>
                             </td>
                           </tr>
@@ -173,7 +173,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
 };
 const Report = () => {
   const variables = {
-    first: 1,
+    first: 10,
     last: null,
     after: null,
     before: null,
