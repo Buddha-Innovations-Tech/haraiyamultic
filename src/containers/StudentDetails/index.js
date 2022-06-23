@@ -257,6 +257,58 @@ const StudentDetails = () => {
               </div>
             </Row>
           </div>
+<h5 className="mb-3">Educational Documents</h5>
+          <div className="mt-5 mb-5 d-flex justify-content-center align-items-center">
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.marksheet}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.character}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.transfer}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.character}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.marksheet}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.provision}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+            <div>
+            <img
+                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.transfer}`}
+                    alt=""
+                    className="form-image me-5"
+                  /> 
+            </div>
+          </div>
           {/*  */}
         </Container>
       </div>

@@ -2994,6 +2994,11 @@ body {
   height: 140px;
   object-fit: cover;
 }
+.single-notice-img{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
 /* feature News */
 /* testomonial */
 /* footer */

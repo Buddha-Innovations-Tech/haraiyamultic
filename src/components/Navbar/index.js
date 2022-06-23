@@ -33,6 +33,7 @@ const NavBar = ({isLoggedIn,setIsLoggedIn}) => {
       }
     }
   `;
+  
 
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const logOutUser = () => {

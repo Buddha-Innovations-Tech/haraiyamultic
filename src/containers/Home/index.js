@@ -326,30 +326,7 @@ const Home = () => {
                   );
                 }}
               </Query>
-              {/* <Col md={3}>
-                <div className="events">
-                  <div className="heading">
-                    <h1 className="feature">Feature Events</h1>
-                  </div>
-                  <div className="event-list">
-                    <Link to="/event" class="event-link">
-                      <div className="d-flex event">
-                        <img
-                          src={Notice}
-                          alt="card img top"
-                          className="img-event"
-                        />
-                        <div className="event-info">
-                          <p className="event-title">
-                            Entrance exam for freshers students 2077
-                          </p>
-                          <p className="event-calendar">29 sep 2020</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              </Col> */}
+              ]
               <Query query={GET_EVENTS}>
                 {({ data: { events } }) => {
                   return (
