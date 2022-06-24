@@ -111,7 +111,7 @@ const Managment = () => {
                               return (
                                 <>
                                   <div className="alumini">
-                                    <img src={x.image.sourceUrl} alt="" />
+                                    <img src={x?.image?.sourceUrl} alt="" />
                                     <p className="alumini-name">{x.name}</p>
                                     <p className="alumini-position">{x.post}</p>
                                   </div>

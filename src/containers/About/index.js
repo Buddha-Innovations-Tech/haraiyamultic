@@ -140,8 +140,8 @@ const About = () => {
                               <div className="col-md-5">
                                 <img
                                   src={
-                                    i.about.introduction.introductions.goals
-                                      .goalimage.sourceUrl
+                                    i?.about?.introduction?.introductions?.goals
+                                      ?.goalimage?.sourceUrl
                                   }
                                   alt=""
                                   className="about-img"
@@ -165,8 +165,8 @@ const About = () => {
                           <div className="col-md-6 order-md-1 order-sm-2 d-none d-md-block">
                             <img
                               src={
-                                i.about.introduction.visionandmission.image
-                                  .sourceUrl
+                                i?.about?.introduction?.visionandmission?.image
+                                  ?.sourceUrl
                               }
                               alt=""
                               className="vision-img"
@@ -233,8 +233,8 @@ const About = () => {
                           <div className="img-goal">
                             <img
                               src={
-                                i.about.introduction.introductions.goals
-                                  .goalimage.sourceUrl
+                                i?.about?.introduction?.introductions?.goals
+                                  ?.goalimage?.sourceUrl
                               }
                               className="image-goal"
                             />

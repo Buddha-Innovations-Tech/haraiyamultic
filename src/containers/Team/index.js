@@ -135,7 +135,7 @@ const Team = () => {
                                     return (
                                       <>
                                         <div className="alumini">
-                                          <img src={e.image.sourceUrl} alt="" />
+                                          <img src={e?.image?.sourceUrl} alt="" />
                                           <p className="alumini-name">
                                             {e.name}
                                           </p>
@@ -179,7 +179,7 @@ const Team = () => {
                                         <>
                                           <div className="alumini">
                                             <img
-                                              src={d.image.sourceUrl}
+                                              src={d?.image?.sourceUrl}
                                               alt=""
                                             />
                                             <p className="alumini-name">

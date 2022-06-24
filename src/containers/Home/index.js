@@ -109,7 +109,7 @@ const Home = () => {
               <Carousel>
                 {pageBy?.homeCarousel.image.map((b) => {
                   return (
-                    <Carousel.Item interval={1800}>
+                    <Carousel.Item interval={3000}>
                       <>
                         <div className="carousel-image-item">
                           <img src={b.image.sourceUrl} alt="" />
