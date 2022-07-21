@@ -68,7 +68,7 @@ const Fotter = () => {
                   <div className='contact-link-list'>
                     <p>
                       <BsTelephoneFill className='fa-solid fa-phone' />
-                      9857058126 | 9857031167
+                      071417022 | 9857058126 | 9857031167
                     </p>
                     <p>
                       <GrMail className='fa-solid fa-envelope' />

@@ -66,7 +66,9 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn }) => {
               <div className='navWrapper-address'>
                 <div className='phone-no'>
                   <BsTelephoneFill className='fa-solid fa-phone' />
-                  <span className='top-phone'>9857058126 | 9857031167</span>
+                  <span className='top-phone'>
+                    071417022 | 9857058126 | 9857031167
+                  </span>
                 </div>
                 <div className='email'>
                   <GrMail className='fa-solid fa-envelope' />
