@@ -86,10 +86,10 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
               </tr>
             </thead>
             <tbody>
-              {downloads.edges.map((a) => {
+              {downloads?.edges?.map((a) => {
                 return (
                   <>
-                    {a.node.download.report.map((b, index) => {
+                    {a.node.download?.report?.map((b, index) => {
                       return (
                         <>
                           <tr className='table-body'>
