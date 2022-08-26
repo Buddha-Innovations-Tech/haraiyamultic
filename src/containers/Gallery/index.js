@@ -2,11 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import BannerImage from "../../images/banner-image.png";
-import Library from "../../images/library.jpg";
-import Classroom from "../../images/classroom.png";
-import Graduation from "../../images/graduation.png";
-import Event from "../../images/events.png";
-import Program from "../../images/program.png";
+
 import gql from "graphql-tag";
 import Query from "../../components/Query";
 const Gallery = () => {
@@ -65,7 +61,7 @@ const Gallery = () => {
                   <div class="row gy-5">
                     {photo.photos.image?.map((i) => {
                       return (
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <div class="photo-list">
                             <img src={i.sourceUrl} alt="" class="img-fluid" />
                             <div class="overlay"></div>
