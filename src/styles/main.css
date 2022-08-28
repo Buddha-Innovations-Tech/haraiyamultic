@@ -3152,6 +3152,11 @@ body {
   margin-bottom: 10px;
 }
 
+.modal-image {
+  height: 400px !important;
+  object-fit: cover;
+}
+
 /* feature News */
 /* testomonial */
 /* footer */
