@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import BannerImage from "../../images/banner-image.png";
+import ModalImage from "react-modal-image";
 
 import gql from "graphql-tag";
 import Query from "../../components/Query";
@@ -64,10 +65,18 @@ const Gallery = () => {
                     {photo.photos.image?.map((i) => {
                       return (
                         <div class="col-md-6">
-                          <div class="photo-list">
-                            <img src={i.sourceUrl} alt="" class="img-fluid" />
-                            <div class="overlay"></div>
-                          </div>
+                          {/* <div class="photo-list"> */}
+                          <ModalImage
+                            small={i.sourceUrl}
+                            large={i.sourceUrl}
+                            alt="photo"
+                            hideDownload={true}
+                            hideZoom={true}
+                            className="modal-image"
+                          />
+                          {/* <img src={i.sourceUrl} alt="" class="img-fluid" /> */}
+                          <div class="overlay"></div>
+                          {/* </div> */}
                         </div>
                       );
                     })}
