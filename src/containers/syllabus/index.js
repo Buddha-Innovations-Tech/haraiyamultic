@@ -5,6 +5,7 @@ import BannerImage from "../../images/banner-image.png";
 import syllabusLogo from "../../images/logo.webp";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Syllabus = () => {
   const GET_BBSSYALLBUS = gql`
     query NewQuery {
@@ -44,6 +45,7 @@ const Syllabus = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <div className="banner-image">
         <img src={BannerImage} alt="" className="img-banner" />
         <div className="overlay">

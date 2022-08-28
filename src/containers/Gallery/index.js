@@ -5,6 +5,7 @@ import BannerImage from "../../images/banner-image.png";
 
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Gallery = () => {
   const { id } = useParams();
   const GET_PHOTOS = gql`
@@ -20,6 +21,7 @@ const Gallery = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_PHOTOS} id={id}>
         {({ data: { photo } }) => {
           return (

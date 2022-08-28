@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const BED = () => {
   const [desc, setDesc] = useState("");
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ const BED = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_BED} id={null}>
         {({ data: { academics } }) => {
           return (

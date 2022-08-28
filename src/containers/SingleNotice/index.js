@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import gql from "graphql-tag";
 import { Container } from "react-bootstrap";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const SingleNotice = () => {
   const { id } = useParams();
 
@@ -20,6 +21,7 @@ const SingleNotice = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Query query={SINGLE_NOTICE} id={id}>
         {({ data: { notice } }) => {
           return (

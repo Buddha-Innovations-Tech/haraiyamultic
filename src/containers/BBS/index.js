@@ -3,6 +3,7 @@ import BannerImage from "../../images/banner-image.png";
 import { Link, useParams } from "react-router-dom";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const BBS = () => {
   const [desc, setDesc] = useState("");
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ const BBS = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_BBS} id={id}>
         {({ data: { academic } }) => {
           return (

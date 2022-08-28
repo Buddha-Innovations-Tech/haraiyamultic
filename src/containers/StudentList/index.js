@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Container, Table, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const StudentList = () => {
   const [users, setUsers] = useState([]);
@@ -15,25 +16,23 @@ const StudentList = () => {
     },
   };
   const getAllUsers = async () => {
-    await axios.get(`/api/forms/`,config).then((res) => {
+    await axios.get(`/api/forms/`, config).then((res) => {
       console.log(res);
       setUsers(res.data.users);
     });
   };
 
-
   useEffect(() => {
-   
     if (localStorage.getItem("isAdmin") === "false") {
       navigate("/");
-    }else{
+    } else {
       getAllUsers();
     }
-   
   }, []);
 
   return (
     <>
+      <ScrollToTop />
       <div>
         <Container>
           <Table striped bordered hover>

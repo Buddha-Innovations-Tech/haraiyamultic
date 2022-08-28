@@ -5,6 +5,7 @@ import NoticeBannerImage from "../../images/notice1.png";
 import EventDescriptionImage from "../../images/event-description-image.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const EventDescription = () => {
   const { id } = useParams();
 
@@ -26,6 +27,7 @@ const EventDescription = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_SINGLEEVENTS} id={id}>
         {({ data: { event } }) => {
           return (

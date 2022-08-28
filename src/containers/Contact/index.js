@@ -3,6 +3,7 @@ import BannerImage from "../../images/banner-image.png";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import axios from "axios";
+import ScrollToTop from "../../components/ScrollToTop";
 const Contact = () => {
   const [name, setName] = useState("");
   const [phonenumber, setPhoneNumber] = useState("");
@@ -29,6 +30,7 @@ const Contact = () => {
   };
   return (
     <>
+      <ScrollToTop />
       <div className="banner-image">
         <img src={BannerImage} alt="" className="img-banner" />
         <div className="overlay">

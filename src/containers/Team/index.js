@@ -7,6 +7,7 @@ import CampusChief from "../../images/campus_chief.png";
 import ChairPerson from "../../images/campus_chief.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Team = () => {
   const GET_TEACHINGSTAFF = gql`
     query NewQuery {
@@ -48,6 +49,7 @@ const Team = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <div className="banner-image">
         <img src={BannerImage} alt="" className="img-banner" />
         <div className="overlay">
@@ -135,7 +137,10 @@ const Team = () => {
                                     return (
                                       <>
                                         <div className="alumini">
-                                          <img src={e?.image?.sourceUrl} alt="" />
+                                          <img
+                                            src={e?.image?.sourceUrl}
+                                            alt=""
+                                          />
                                           <p className="alumini-name">
                                             {e.name}
                                           </p>

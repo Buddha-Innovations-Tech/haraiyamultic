@@ -12,6 +12,7 @@ import gql from "graphql-tag";
 import Query from "../../components/Query";
 import Moment from "react-moment";
 import { useEffect } from "react";
+import ScrollToTop from "../../components/ScrollToTop";
 const Home = () => {
   const GET_ACADEMIC = gql`
     query NewQuery {
@@ -102,6 +103,7 @@ const Home = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_SLIDER} id={"cG9zdDozMDc="}>
         {({ data: { pageBy } }) => {
           return (

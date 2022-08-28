@@ -7,6 +7,7 @@ import CampusChief from "../../images/campus_chief.png";
 import ChairPerson from "../../images/campus_chief.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Cells = () => {
   const [cell, setCell] = useState([]);
   const [title, setTitle] = useState("");
@@ -56,6 +57,7 @@ const Cells = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_CELLS}>
         {({ data: { abouts } }) => {
           return (

@@ -5,6 +5,7 @@ import BannerImage from "../../images/banner-image.png";
 import Introduction from "../../images/introduction.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const About = () => {
   const GET_INTRODUCTION = gql`
     query NewQuery {
@@ -40,6 +41,7 @@ const About = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_INTRODUCTION} id={null}>
         {({ data: { abouts } }) => {
           return (

@@ -4,6 +4,7 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { MdLocationPin } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Prospectus from "../../images/prospectus.pdf";
 
 const Fotter = () => {
   return (
@@ -69,7 +70,11 @@ const Fotter = () => {
                     <p>
                       <Link to="/admission_form">Admission Form</Link>
                     </p>
-                    <p>Prospectus</p>
+                    <p>
+                      <a href={Prospectus} target="_blank">
+                        Prospectus
+                      </a>
+                    </p>
                     <p>
                       <Link to="/report">Annual Report</Link>
                     </p>

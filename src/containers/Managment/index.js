@@ -7,6 +7,7 @@ import CampusChief from "../../images/campus_chief.png";
 import ChairPerson from "../../images/campus_chief.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Managment = () => {
   const GET_MANAGEMENT = gql`
     query NewQuery {
@@ -27,6 +28,7 @@ const Managment = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_MANAGEMENT}>
         {({ data: { abouts } }) => {
           return (

@@ -3,6 +3,7 @@ import { Container, Row, Col, Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Photo from "../../images/bimali.jpg";
 import axios from "axios";
+import ScrollToTop from "../../components/ScrollToTop";
 const StudentDetails = () => {
   const { id } = useParams();
   const [users, setUsers] = useState();
@@ -27,15 +28,16 @@ const StudentDetails = () => {
   if (!users) return <p>loading...</p>;
   return (
     <>
+      <ScrollToTop />
       <div>
         <Container>
           <div className="d-flex">
             <div className="studentprofile">
-             <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.image}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.image}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div className="studentname">
               <h2>
@@ -257,56 +259,56 @@ const StudentDetails = () => {
               </div>
             </Row>
           </div>
-<h5 className="mb-3">Educational Documents</h5>
+          <h5 className="mb-3">Educational Documents</h5>
           <div className="mt-5 mb-5 d-flex justify-content-center align-items-center">
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.marksheet}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.marksheet}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.character}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.character}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.transfer}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.slc.transfer}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.character}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.character}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.marksheet}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.marksheet}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.provision}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.provision}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
             <div>
-            <img
-                    src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.transfer}`}
-                    alt=""
-                    className="form-image me-5"
-                  /> 
+              <img
+                src={`${process.env.REACT_APP_IMAGE_PREFIX}${users.majordocuments.twelve.transfer}`}
+                alt=""
+                className="form-image me-5"
+              />
             </div>
           </div>
           {/*  */}

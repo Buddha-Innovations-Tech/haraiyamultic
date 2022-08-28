@@ -5,6 +5,7 @@ import BannerImage from "../../images/banner-image.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
 import { BsFillFilePdfFill } from "react-icons/bs";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const QAA = () => {
   const [password, setPassword] = useState("");
@@ -31,6 +32,7 @@ const QAA = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_QAA}>
         {({ data: { qaas } }) => {
           return (

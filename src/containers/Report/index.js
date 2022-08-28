@@ -8,6 +8,7 @@ import Query from "../../components/Query";
 import Moment from "react-moment";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
+import ScrollToTop from "../../components/ScrollToTop";
 const REPORT_DOWNLOAD = gql`
   query NewQuery($first: Int, $last: Int, $after: String, $before: String) {
     downloads(first: $first, last: $last, after: $after, before: $before) {
@@ -44,6 +45,7 @@ const ComponentPage = ({ error, loading, data, fetchMore }) => {
   const { downloads } = data;
   return (
     <>
+      <ScrollToTop />
       <div className="banner-image">
         <img src={BannerImage} alt="" className="img-banner" />
         <div className="overlay">

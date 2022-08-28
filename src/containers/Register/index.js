@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import axios from "axios";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -32,6 +33,7 @@ const Register = () => {
   };
   return (
     <>
+      <ScrollToTop />
       <div className="login-page">
         <div className="contact-form">
           {error && (

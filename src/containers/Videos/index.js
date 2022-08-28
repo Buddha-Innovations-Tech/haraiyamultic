@@ -9,6 +9,7 @@ import Event from "../../images/events.png";
 import Program from "../../images/program.png";
 import gql from "graphql-tag";
 import Query from "../../components/Query";
+import ScrollToTop from "../../components/ScrollToTop";
 const Videos = () => {
   const GET_VIDEOS = gql`
     query NewQuery($id: ID!) {
@@ -26,6 +27,7 @@ const Videos = () => {
   `;
   return (
     <>
+      <ScrollToTop />
       <Query query={GET_VIDEOS} id={"cG9zdDoxNDg="}>
         {({ data: { pageBy } }) => {
           return (
