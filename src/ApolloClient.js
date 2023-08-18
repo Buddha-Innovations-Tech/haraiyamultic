@@ -1,10 +1,10 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 // import { InMemoryCache } from "apollo-cache-inmemory";
-import { HttpLink } from 'apollo-link-http';
+import { HttpLink } from "apollo-link-http";
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: `https://admin.hmc.edu.np/hmc/graphql`,
+  uri: `https://admin.hmc.edu.np/graphql`,
 });
 const client = new ApolloClient({
   cache,
