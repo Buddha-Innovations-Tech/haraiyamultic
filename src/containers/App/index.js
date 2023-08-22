@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 //components
@@ -40,53 +40,174 @@ import StudentList from "../StudentList";
 import StudentDetails from "../StudentDetails";
 import ScrollToTop from "../../components/ScrollToTop";
 import QAA from "../QAA";
-
+import gql from "graphql-tag";
+import Query from "../../components/Query";
+import Popup from "../../components/Popup";
 const App = () => {
+  const GET_POPUPS = gql`
+    query NewQuery {
+      popupNotices {
+        nodes {
+          title
+          popupNotice {
+            noticeImage {
+              mediaItemUrl
+              srcSet
+            }
+          }
+        }
+      }
+    }
+  `;
   // axios.defaults.baseURL = "https://student-forms.herokuapp.com/";
   axios.defaults.baseURL = "https://forms.hmc.edu.np/";
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [showPopup, setShowPopup] = useState(true);
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [showPopup]);
   return (
     <BrowserRouter>
+      <Query query={GET_POPUPS}>
+        {({ data: { popupNotices } }) => {
+          if (popupNotices.nodes.length === 0) {
+            setShowPopup(false);
+          }
+          return (
+            popupNotices.nodes.length > 0 &&
+            showPopup && (
+              <Popup
+                setShowPopup={setShowPopup}
+                data={popupNotices.nodes}
+              />
+            )
+          );
+        }}
+      </Query>
       <ScrollToTop />
-      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <NavBar
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
       {/* <MiniNavbar /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/message" element={<Message />} />
-        <Route path="/managment_commitee" element={<Managment />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/cells" element={<Cells />} />
-        <Route path="/academics/:id" element={<BBS />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/about"
+          element={<About />}
+        />
+        <Route
+          path="/message"
+          element={<Message />}
+        />
+        <Route
+          path="/managment_commitee"
+          element={<Managment />}
+        />
+        <Route
+          path="/team"
+          element={<Team />}
+        />
+        <Route
+          path="/cells"
+          element={<Cells />}
+        />
+        <Route
+          path="/academics/:id"
+          element={<BBS />}
+        />
 
-        <Route path="/bed" element={<BED />} />
+        <Route
+          path="/bed"
+          element={<BED />}
+        />
 
-        <Route path="/report" element={<Report />} />
-        <Route path="/syllabus" element={<Syllabus />} />
-        <Route path="/photos" element={<Photos />} />
+        <Route
+          path="/report"
+          element={<Report />}
+        />
+        <Route
+          path="/syllabus"
+          element={<Syllabus />}
+        />
+        <Route
+          path="/photos"
+          element={<Photos />}
+        />
         {/* <Route path="/photos" element={<Gallery />} /> */}
-        <Route path="/photosfull/:id" element={<Gallery />} />
-        <Route path="/videos" element={<Videos />} />
-        <Route path="/notice" element={<Notice />} />
-        <Route path="/singlenotice/:id" element={<SingleNotice />} />
-        <Route path="/event" element={<Event />} />
-        <Route path="/event_description/:id" element={<EventDescription />} />
-        <Route path="/alumini" element={<Alumini />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/student_zone" element={<StudentZone />} />
-        <Route path="/admission_form" element={<AdmissionForm />} />
+        <Route
+          path="/photosfull/:id"
+          element={<Gallery />}
+        />
+        <Route
+          path="/videos"
+          element={<Videos />}
+        />
+        <Route
+          path="/notice"
+          element={<Notice />}
+        />
+        <Route
+          path="/singlenotice/:id"
+          element={<SingleNotice />}
+        />
+        <Route
+          path="/event"
+          element={<Event />}
+        />
+        <Route
+          path="/event_description/:id"
+          element={<EventDescription />}
+        />
+        <Route
+          path="/alumini"
+          element={<Alumini />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/student_zone"
+          element={<StudentZone />}
+        />
+        <Route
+          path="/admission_form"
+          element={<AdmissionForm />}
+        />
         <Route
           path="/login"
           element={
-            <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+            <Login
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
           }
         />
-        <Route path="/register" element={<Register />} />
-        <Route path="/qaa" element={<QAA />} />
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+        <Route
+          path="/qaa"
+          element={<QAA />}
+        />
 
-        <Route path="/studentlist" element={<StudentList />} />
-        <Route path="/studentdetails/:id" element={<StudentDetails />} />
+        <Route
+          path="/studentlist"
+          element={<StudentList />}
+        />
+        <Route
+          path="/studentdetails/:id"
+          element={<StudentDetails />}
+        />
       </Routes>
 
       <Fotter />

@@ -1,37 +1,81 @@
 @mixin flexproperty {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @mixin navbarItems {
-    margin-left: 10px; 
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #666666;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
 }
 
-@mixin fotterLink{
-    color:$mytext-color1;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;    
+@mixin fotterLink {
+  color: $mytext-color1;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
 }
 
-@mixin fotterLinklist{
-    margin-top: 28px;
-    color:$mytext-color1;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 24px;
+@mixin fotterLinklist {
+  margin-top: 28px;
+  color: $mytext-color1;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 24px;
 }
 
-@mixin content{
-    margin-top: 24px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    color:#666666;
+@mixin content {
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #666666;
+}
+$xs: 480px;
+$sm: 576px; // FOR SMALL DEVICES == sm
+$smd: 767px;
+$md: 768px; // FOR MEDIUM DEVICES == md
+$lg: 992px; // FOR LARGE DEVICES == lg
+$xlg: 1200px; // FOR EXTRA LARGE DEVICES == xlg
+$xxlg: 1400px;
+$xxxlg: 1600px;
+
+@mixin responsive-for($size) {
+  @if $size == xs {
+    @media all and (max-width: $xs) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media all and (max-width: $sm) {
+      @content;
+    }
+  } @else if $size == smd {
+    @media all and (max-width: $smd) {
+      @content;
+    }
+  } @else if $size == md {
+    @media all and (max-width: $md) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media all and (max-width: $lg) {
+      @content;
+    }
+  } @else if $size == xlg {
+    @media all and (max-width: $xlg) {
+      @content;
+    }
+  } @else if $size == xxlg {
+    @media all and (max-width: $xxlg) {
+      @content;
+    }
+  } @else if $size == xxxlg {
+    @media all and (max-width: $xxxlg) {
+      @content;
+    }
+  }
 }

@@ -27,9 +27,11 @@
   position: absolute;
   width: 100%;
   height: 252px;
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0) 99.94%
+  );
   color: #ffffff;
 }
 
@@ -85,9 +87,11 @@
   position: absolute;
   width: 100%;
   height: 367px;
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0.4) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0.4) 99.94%
+  );
   color: #ffffff;
 }
 
@@ -535,16 +539,20 @@ margin: 20px auto 5px;
   position: absolute;
   top: 0;
 
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0.4) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0.4) 99.94%
+  );
 }
 
 .carousel-image-item .carousel-content {
   height: 500px;
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0) 99.94%
+  );
 }
 
 .logo-image {
@@ -853,7 +861,11 @@ margin: 20px auto 5px;
   color: rgba(2, 107, 175, 0.37);
 }
 
-.testomonials .list_testomonial .testomonial .testomonial-info .testomoinal-title {
+.testomonials
+  .list_testomonial
+  .testomonial
+  .testomonial-info
+  .testomoinal-title {
   margin: 0px 18px 22px 56px;
   font-weight: 400;
   font-size: 16px;
@@ -866,16 +878,30 @@ margin: 20px auto 5px;
   width: 100%;
 }
 
-.testomonials .list_testomonial .testomonial .testomonial-body .testomonial_image {
+.testomonials
+  .list_testomonial
+  .testomonial
+  .testomonial-body
+  .testomonial_image {
   text-align: center;
   margin-top: 30px;
 }
 
-.testomonials .list_testomonial .testomonial .testomonial-body .testomonial_image .student-image {
+.testomonials
+  .list_testomonial
+  .testomonial
+  .testomonial-body
+  .testomonial_image
+  .student-image {
   margin-top: -50px;
 }
 
-.testomonials .list_testomonial .testomonial .testomonial-body .testomonial_image .student-name {
+.testomonials
+  .list_testomonial
+  .testomonial
+  .testomonial-body
+  .testomonial_image
+  .student-name {
   margin-top: 12px;
   font-weight: 600;
   font-size: 20px;
@@ -883,7 +909,12 @@ margin: 20px auto 5px;
   color: white;
 }
 
-.testomonials .list_testomonial .testomonial .testomonial-body .testomonial_image .student-year {
+.testomonials
+  .list_testomonial
+  .testomonial
+  .testomonial-body
+  .testomonial_image
+  .student-year {
   margin-top: -12px;
   font-weight: 400;
   font-size: 16px;
@@ -1191,7 +1222,6 @@ margin: 20px auto 5px;
 }
 
 @media only screen and (max-width: 390px) {
-
   /* .carousel-image-item {
     height: 300px !important;
   } */
@@ -1306,11 +1336,11 @@ section[role="navDrop"] .btn-success {
   border: none;
 }
 
-section[role="navDrop"] .btn-check:active+.btn-success,
-section[role="navDrop"] .btn-check:checked+.btn-success,
+section[role="navDrop"] .btn-check:active + .btn-success,
+section[role="navDrop"] .btn-check:checked + .btn-success,
 section[role="navDrop"] .btn-success.active,
 section[role="navDrop"] .btn-success:active,
-section[role="navDrop"] .show>.btn-success.dropdown-toggle {
+section[role="navDrop"] .show > .btn-success.dropdown-toggle {
   color: color(text-light);
   background-color: #ffffff;
   border: none;
@@ -1560,9 +1590,11 @@ section[role="navDrop"] .show>.btn-success.dropdown-toggle {
   position: absolute;
   width: 100%;
   height: 400px;
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0) 99.94%
+  );
   border-radius: 5px;
   color: #ffffff;
 }
@@ -2315,9 +2347,11 @@ section[role="navDrop"] .show>.btn-success.dropdown-toggle {
   position: absolute;
   width: 100%;
   height: 290px;
-  background: linear-gradient(90.09deg,
-      rgba(0, 0, 0, 0.72) 0.09%,
-      rgba(0, 0, 0, 0.5) 99.94%);
+  background: linear-gradient(
+    90.09deg,
+    rgba(0, 0, 0, 0.72) 0.09%,
+    rgba(0, 0, 0, 0.5) 99.94%
+  );
   color: #ffffff;
 }
 
@@ -3096,7 +3130,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 9998;
   box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.75);
@@ -3157,6 +3191,113 @@ body {
   object-fit: cover;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
+}
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+.popup-container-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.popup-container-item {
+  z-index: 100;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px solid rgba(57, 57, 57, 0.3);
+  border-radius: 10px;
+}
+@media all and (max-width: 576px) {
+  .popup-container-item {
+    height: 30rem;
+    position: relative;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+.popup-container-item-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.popup-container-item-header button {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 25px;
+}
+.popup-container-item-image {
+  text-align: center;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.popup-container-item-image .carousel-control-next,
+.popup-container-item-image .carousel-control-prev {
+  display: block;
+  opacity: 1;
+  padding-top: 50%;
+}
+@media all and (max-width: 576px) {
+  .popup-container-item-image .carousel-control-next,
+  .popup-container-item-image .carousel-control-prev {
+    position: fixed;
+    display: none;
+    padding-top: 0;
+    opacity: 0.4;
+  }
+}
+@media all and (max-width: 576px) {
+  .popup-container-item-image .carousel-indicators {
+    display: none;
+  }
+}
+.popup-container-item-image .carousel-control-prev-icon,
+.popup-container-item-image .carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: black;
+  opacity: 0.7;
+  font-size: 12px;
+  border-radius: 50%;
+  background-size: 70% 70%;
+  position: fixed;
+}
+@media all and (max-width: 576px) {
+  .popup-container-item-image {
+    min-height: 40vh;
+  }
+}
+.popup-container-item-image span {
+  font-size: 20px;
+}
+.popup-container-item-image img {
+  width: 768px;
+}
+@media all and (max-width: 576px) {
+  .popup-container-item-image img {
+    width: 80vw;
+  }
+} /*# sourceMappingURL=main.css.map */ /*# sourceMappingURL=main.css.map */
 /* feature News */
 /* testomonial */
 /* footer */
