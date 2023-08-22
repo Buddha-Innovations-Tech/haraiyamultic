@@ -1,0 +1,105 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    &-overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    &-item {
+      z-index: 50;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 1rem;
+
+      @include responsive-for(sm) {
+        height: 30rem;
+        position: relative;
+        gap: 1rem;
+        padding: 0.5rem;
+      }
+      background-color: white;
+      border: 1px solid rgba(57, 57, 57, 0.3);
+
+      border-radius: 10px;
+      &-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        button {
+          background: transparent;
+          outline: none;
+          border: none;
+          font-size: 25px;
+        }
+      }
+      &-image {
+        text-align: center;
+        height: 80vh;
+        overflow-y: scroll;
+
+        .carousel-control-next,
+        .carousel-control-prev {
+          display: block;
+          opacity: 1;
+          padding-top: 50%;
+
+          @include responsive-for(sm) {
+            position: fixed;
+            display: none;
+            padding-top: 0;
+            opacity: 0.4;
+          }
+        }
+        .carousel-indicators {
+          @include responsive-for(sm) {
+            display: none;
+          }
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          background-color: black;
+          opacity: 0.7;
+          font-size: 12px;
+          border-radius: 50%;
+          background-size: 70% 70%;
+          position: fixed;
+        }
+        @include responsive-for(sm) {
+          min-height: 40vh;
+        }
+
+        span {
+          font-size: 20px;
+        }
+        img {
+          width: 768px;
+
+          @include responsive-for(sm) {
+            width: 80vw;
+          }
+        }
+      }
+    }
+  }
+}
